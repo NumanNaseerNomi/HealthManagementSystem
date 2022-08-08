@@ -49,15 +49,14 @@
                     <div class="card-body">
                         @if ($role == 'doctor')
                             <a href=" {{ route('prescription.create') }} ">
-                                <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-4">
                                     <i class="bx bx-plus font-size-16 align-middle mr-2"></i>
                                     {{ __('Create Prescription') }}
                                 </button>
                             </a>
                         @endif
-                        <table class="table table-bordered dt-responsive nowrap "
-                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
+                        <table class="table table-centered table-nowrap mb-0 table-striped">
+                            <thead class="bg-success text-dark">
                                 <tr>
                                     <th>{{ __('Sr. No') }}</th>
                                     @if ($role == 'doctor')
@@ -112,7 +111,7 @@
                                         <td>
                                             <a href="{{ url('prescription/' . $prescription->id) }}">
                                                 <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light"
                                                     title="View Prescription">
                                                     <i class="mdi mdi-eye"></i>
                                                 </button>
@@ -120,14 +119,14 @@
                                             @if ($role == 'doctor')
                                                 <a href="{{ url('prescription/' . $prescription->id . '/edit') }}">
                                                     <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light"
                                                         title="Update Prescription">
                                                         <i class="mdi mdi-lead-pencil"></i>
                                                     </button>
                                                 </a>
                                                 <a href="javascript:void(0)">
                                                     <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light"
                                                         title="Delete Prescription" data-id="{{ $prescription->id }}"
                                                         id="delete-prescription">
                                                         <i class="mdi mdi-trash-can"></i>
@@ -137,7 +136,7 @@
                                             @if ($role != 'patient')
                                                 <a href="javascript:void(0)">
                                                     <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light
                                                                 send-mail"
                                                         title="Send Email" data-id="{{ $prescription->id }}">
                                                         <i class="mdi mdi-email"></i>
