@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-12">
                 <a href="{{ url('/appointment-create') }}"
-                    class="btn btn-primary text-white waves-effect waves-light mb-4">
+                    class="btn btn-success text-white waves-effect waves-light mb-4">
                     <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Appointment') }}
                 </a>
             </div> <!-- end col -->
@@ -39,9 +39,8 @@
                                 id="selected_date"><?php echo date('d M, Y'); ?></label>
                         </h4>
                         <div id="appointment_list">
-                            <table class="table table-bordered dt-responsive nowrap"
-                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                <thead class="thead-light">
+                            <table class="table text-striped dt-responsive nowrap">
+                                <thead class="bg-success text-dark">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         @if ($role == 'patient')
