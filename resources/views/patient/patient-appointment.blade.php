@@ -17,9 +17,8 @@
 
                         <div class="tab-content p-3 text-muted">
                             <div class="tab-pane active" id="PendingAppointmentList" role="tabpanel">
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                                <table class="table table-striped dt-responsive nowrap">
+                                    <thead class="bg-success text-dark">
                                         <tr>
                                             <th>{{ __('Sr. No') }}</th>
                                             <th>{{ __('Doctor Name') }}</th>
