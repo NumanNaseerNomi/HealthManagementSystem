@@ -1,23 +1,26 @@
-<header id="page-topbar">
+<header id="page-topbar" class="bg-primary">
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <a href="{{ url('/') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="22">
+                        <!-- <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="22"> -->
+                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="17">
+                        <!-- <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="17"> -->
+                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">
                     </span>
                 </a>
                 <a href="{{ url('/') }}" class="logo logo-light">
                     <span class="logo-sm">
-{{--                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">--}}
+                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">
                         <spann class="text-light">HMS</spann>
                     </span>
                     <span class="logo-lg">
-{{--                        <img src="{{ URL::asset('assets/images/logo-light1.png') }}" alt="" height="19">--}}
+                        <!-- <img src="{{ URL::asset('assets/images/logo-light1.png') }}" alt="" height="19"> -->
+                        <img src="{{ URL::asset('assets/images/logo-light.png') }}" alt="" height="22">
                         <span class="text-light">Health Management System</span>
                     </span>
                 </a>
@@ -73,17 +76,17 @@
                     </form>
                 </div>
             </div>
-            <div class="dropdown d-none d-lg-inline-block ml-1">
+            <!-- <div class="dropdown d-none d-lg-inline-block ml-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                     <i class="bx bx-fullscreen"></i>
                 </button>
-            </div>
+            </div> -->
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <i class="bx bx-bell bx-tada"></i>
-                    <span class="badge badge-danger badge-pill">{{ $Cnotification_count->count() }}</span>
+                    <!-- <span class="badge badge-danger badge-pill">{{ $Cnotification_count->count() }}</span> -->
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                     aria-labelledby="page-header-notifications-dropdown">
@@ -124,9 +127,9 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user"
+                    <!-- <img class="rounded-circle header-profile-user"
                     src="@if($user->profile_photo != ''){{ URL::asset('storage/images/users/' . $user->profile_photo) }}@else{{ URL::asset('assets/images/users/noImage.png') }}@endif"
-                    alt="Avatar">
+                    alt="Avatar"> -->
                     <span class="d-none d-xl-inline-block ml-1">{{ $user->first_name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
@@ -144,8 +147,8 @@
                     @elseif($role == 'admin')
                     <a class="dropdown-item" href="{{ url('profile-edit') }}"><i
                         class="bx bx-user font-size-16 align-middle mr-1"></i> {{ __("Change Profile") }}</a>
-{{--                    <a class="dropdown-item" href="{{ url('payment-key') }}"><i--}}
-{{--                        class="bx bx-key font-size-16 align-middle mr-1"></i> {{ __("Add Api Key") }}</a>--}}
+                    <!-- <a class="dropdown-item" href="{{ url('payment-key') }}"><i
+                        class="bx bx-key font-size-16 align-middle mr-1"></i> {{ __("Add Api Key") }}</a> -->
                     @endif
                     <a class="dropdown-item d-block" href="{{ url('change-password') }}"><i
                             class="bx bx-wrench font-size-16 align-middle mr-1"></i> {{ __("Change Password") }}</a>
