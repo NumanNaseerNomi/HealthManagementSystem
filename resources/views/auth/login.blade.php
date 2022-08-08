@@ -73,11 +73,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="mt-5 text-center">
-                        <p>{{ __("Don't have an account ?") }} <a href="{{ url('register') }}"
-                                class="font-weight-medium text-primary"> {{ __("Sign Up here") }}</a> </p>
-                        <p>© {{ date('Y') }} HMS</p>
-                    </div> -->
                 </div>
             </div>
         </div>
