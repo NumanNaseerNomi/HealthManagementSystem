@@ -17,13 +17,12 @@
                 <div class="card">
                     <div class="card-body">
                         <a href=" {{ route('patient.create') }} ">
-                            <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
+                            <button type="button" class="btn btn-success waves-effect waves-light mb-4">
                                 <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Patient') }}
                             </button>
                         </a>
-                        <table class="table table-bordered dt-responsive nowrap"
-                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
+                        <table class="table table-striped dt-responsive nowrap">
+                            <thead class="bg-success text-dark">
                                 <tr>
                                     <th>{{ __('Sr. No') }}</th>
                                     <th>{{ __('Name') }}</th>
@@ -48,28 +47,27 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                        <td><a href="{{ url('patient/' . $patient->id) }}">{{ $patient->first_name }}
-                                                {{ $patient->last_name }}</a></td>
+                                        <td><a href="{{ url('patient/' . $patient->id) }}" class="text-success">{{ $patient->first_name . " " . $patient->last_name }}</a></td>
                                         <td>{{ $patient->mobile }}</td>
                                         <td>{{ $patient->email }}</td>
                                         <td>
                                             <a href="{{ url('patient/' . $patient->id) }}">
                                                 <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                     title="View Profile">
                                                     <i class="mdi mdi-eye"></i>
                                                 </button>
                                             </a>
                                             <a href="{{ url('patient/' . $patient->id . '/edit') }}">
                                                 <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                     title="Update Profile">
                                                     <i class="mdi mdi-lead-pencil"></i>
                                                 </button>
                                             </a>
                                             <a href=" javascript:void(0)">
                                                 <button type="button"
-                                                    class="btn btn-primary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                     title="Deactivate Profile" data-id="{{ $patient->id }}"
                                                     id="delete-patient">
                                                     <i class="mdi mdi-trash-can"></i>
@@ -132,4 +130,13 @@
                 }
             });
         </script>
+        <style>
+            .page-item.active .page-link
+            {
+                z-index: 3;
+                color: #fff;
+                background-color: #2ca579;
+                border-color: #299b71;
+            }
+        </style>
     @endsection
