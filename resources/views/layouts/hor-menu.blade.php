@@ -1,7 +1,7 @@
 <div class="topnav shadow">
     <div class="container-fluid">
         <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-            <div class="collapse navbar-collapse" id="topnav-menu-content">
+            <div class="collapse navbar-collapse justify-content-center" id="topnav-menu-content">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">
