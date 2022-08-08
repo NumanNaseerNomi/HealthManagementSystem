@@ -24,9 +24,8 @@
                                 </button>
                             </a>
                         @endif
-                        <table class="table table-bordered dt-responsive nowrap "
-                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
+                        <table class="table table-striped dt-responsive nowrap">
+                            <thead class="bg-success text-dark">
                                 <tr>
                                     <th>{{ __('Sr. No') }}</th>
                                     <th>{{ __('Title') }}</th>
@@ -156,4 +155,13 @@
                 }
             });
         </script>
+        <style>
+            .page-item.active .page-link
+            {
+                z-index: 3;
+                color: #fff;
+                background-color: #34c38f;
+                border-color: #34c38f;
+            }
+        </style>
     @endsection
