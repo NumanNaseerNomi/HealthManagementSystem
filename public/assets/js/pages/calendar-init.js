@@ -99,7 +99,7 @@ $(document).ready(function() {
                     } else {
                         var t = 1;
                         var data = response.appointments;
-                        var list = '<table class="table table-bordered dt-responsive nowrap datatable" style="border-collapse: collapse; border-spacing: 0; width: 100%;"><thead class="thead-light"><tr><th>Sr.No</th>';
+                        var list = '<table class="table table-striped dt-responsive nowrap"><thead class="bg-success text-dark"><tr><th>Sr.No</th>';
                         if (response.role == 'doctor') {
                             list += '<th>Patient Name</th>';
                             list += '<th>Patient Number</th>';
