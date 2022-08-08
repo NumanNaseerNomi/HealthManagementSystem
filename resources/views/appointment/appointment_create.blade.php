@@ -24,8 +24,7 @@
         <!-- end page title -->
         <div class="row">
             <div class="col-12">
-                <a href="{{ url('/appointment/create') }}"
-                    class="btn btn-primary text-white waves-effect waves-light mb-4">
+                <a href="{{ url('/appointment/create') }}" class="btn btn-success text-white waves-effect waves-light mb-4">
                     <i class="mdi mdi-arrow-left  font-size-16 align-middle mr-2"></i> {{ __('Back') }}
                 </a>
             </div> <!-- end col -->
@@ -34,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <blockquote>{{ __('Book Appointment') }}</blockquote>
+                        <h4 class="card-title">{{ __('Book Appointment') }}</h4>
                         <form action="{{ url('appointment-store') }}" id="" method="POST">
                             @csrf
                             @if ($role != 'patient')
@@ -176,9 +175,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Create Appointment') }}
-                                    </button>
+                                    <button type="submit" class="btn btn-success">{{ __('Create Appointment') }}</button>
                                 </div>
                             </div>
                         </form>
