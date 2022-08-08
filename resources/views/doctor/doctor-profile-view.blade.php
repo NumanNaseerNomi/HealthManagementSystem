@@ -16,7 +16,7 @@
         @endcomponent
         <div class="row">
             <div class="col-xl-4">
-                <div class="card overflow-hidden">
+                <!-- <div class="card overflow-hidden">
                     <div class="bg-soft-primary">
                         <div class="row">
                             <div class="col-7">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- end card -->
                 <div class="card">
                     <div class="card-body">
@@ -106,32 +106,32 @@
                         <p>Available Day</p>
                         @if ($availableDay)
                             @if ($availableDay->sun == 1)
-                                <span class="badge badge-info font-size-15 my-2">Sunday</span>
+                                <span class="badge badge-success font-size-15 my-2">Sunday</span>
                             @endif
                             @if ($availableDay->mon == 1)
-                                <span class="badge badge-info font-size-15 my-2">Monday</span>
+                                <span class="badge badge-success font-size-15 my-2">Monday</span>
                             @endif
                             @if ($availableDay->tue == 1)
-                                <span class="badge badge-info font-size-15 my-2">Tuesday</span>
+                                <span class="badge badge-success font-size-15 my-2">Tuesday</span>
                             @endif
                             @if ($availableDay->wen == 1)
-                                <span class="badge badge-info font-size-15 my-2">Wednesday</span>
+                                <span class="badge badge-success font-size-15 my-2">Wednesday</span>
                             @endif
                             @if ($availableDay->thu == 1)
-                                <span class="badge badge-info font-size-15 my-2">Thursday</span>
+                                <span class="badge badge-success font-size-15 my-2">Thursday</span>
                             @endif
                             @if ($availableDay->fri == 1)
-                                <span class="badge badge-info font-size-15 my-2">Friday</span>
+                                <span class="badge badge-success font-size-15 my-2">Friday</span>
                             @endif
                             @if ($availableDay->sat == 1)
-                                <span class="badge badge-info font-size-15 my-2">Saturday</span>
+                                <span class="badge badge-success font-size-15 my-2">Saturday</span>
                             @endif
                         @endif
                         <hr>
                         <p>Available Time</p>
                         @if ($availableTime)
                             @foreach ($availableTime as $item)
-                                <span class="badge badge-info font-size-15 my-2">
+                                <span class="badge badge-success font-size-15 my-2">
                                     {{ \Carbon\Carbon::createFromFormat('H:i:s', $item->from)->format('h:i') . ' To ' . \Carbon\Carbon::createFromFormat('H:i:s', $item->to)->format('h:i') }}
                                 </span>
                             @endforeach
@@ -150,11 +150,7 @@
                                         <p class="text-muted font-weight-medium">{{ __('Appointments') }}</p>
                                         <h4 class="mb-0">{{ number_format($data['total_appointment']) }}</h4>
                                     </div>
-                                    <div class="mini-stat-icon avatar-sm align-self-center rounded-circle bg-primary">
-                                        <span class="avatar-title">
-                                            <i class="bx bx-check-circle font-size-24"></i>
-                                        </span>
-                                    </div>
+                                    <i class="bx bx-check-circle font-size-24 text-success"></i>
                                 </div>
                             </div>
                         </div>
@@ -167,11 +163,7 @@
                                         <p class="text-muted font-weight-medium">{{ __('Pending Bills') }}</p>
                                         <h4 class="mb-0">{{ number_format($data['pending_bill']) }}</h4>
                                     </div>
-                                    <div class="avatar-sm align-self-center mini-stat-icon rounded-circle bg-primary">
-                                        <span class="avatar-title">
-                                            <i class="bx bx-hourglass font-size-24"></i>
-                                        </span>
-                                    </div>
+                                    <i class="bx bx-hourglass font-size-24 text-success"></i>
                                 </div>
                             </div>
                         </div>
@@ -184,11 +176,7 @@
                                         <p class="text-muted font-weight-medium">{{ __('Total Bill') }}</p>
                                         <h4 class="mb-0">${{ number_format($data['revenue'], 2) }}</h4>
                                     </div>
-                                    <div class="avatar-sm align-self-center mini-stat-icon rounded-circle bg-primary">
-                                        <span class="avatar-title">
-                                            <i class="bx bx-package font-size-24"></i>
-                                        </span>
-                                    </div>
+                                    <i class="bx bx-package font-size-24 text-success"></i>
                                 </div>
                             </div>
                         </div>
@@ -220,9 +208,8 @@
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
                             <div class="tab-pane active" id="AppointmentList" role="tabpanel">
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                                <table class="table table-centered table-nowrap mb-0 table-striped">
+                                    <thead class="bg-success text-dark">
                                         <tr>
                                             <th>{{ __('Sr. No') }}</th>
                                             <th>{{ __('Patient Name') }}</th>
@@ -269,9 +256,8 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="PrescriptionList" role="tabpanel">
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                                <table class="table table-centered table-nowrap mb-0 table-striped">
+                                    <thead class="bg-success text-dark">
                                         <tr>
                                             <th>{{ __('Sr. No') }}</th>
                                             <th>{{ __('Patient Name') }}</th>
@@ -300,10 +286,7 @@
                                                 <td>{{ date('d-m-Y') }}</td>
                                                 <td>
                                                     <a href="{{ url('prescription/' . $item->id) }}">
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
-                                                            {{ __('View') }}
-                                                        </button>
+                                                        <button type="button" class="btn btn-success btn-sm btn-rounded waves-effect waves-light">{{ __('View') }}</button>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -321,9 +304,8 @@
                                 </div>
                             </div>
                             <div class="tab-pane" id="Invoices" role="tabpanel">
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
+                                <table class="table table-centered table-nowrap mb-0 table-striped">
+                                    <thead class="bg-success text-dark">
                                         <tr>
                                             <th>{{ __('Sr. No') }}</th>
                                             <th>{{ __('Patient Name') }}</th>
@@ -353,10 +335,7 @@
                                                 <td>{{ $item->payment_status }}</td>
                                                 <td>
                                                     <a href="{{ url('invoice/' . $item->id) }}">
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
-                                                            {{ __('View') }}
-                                                        </button>
+                                                        <button type="button" class="btn btn-success btn-sm btn-rounded waves-effect waves-light">{{ __('View') }}</button>
                                                     </a>
                                                 </td>
                                             </tr>
