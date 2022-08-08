@@ -18,7 +18,7 @@
                     <div class="card-body">
                         @if ($role == 'admin ')
                             <a href=" {{ route('receptionist.create') }} ">
-                                <button type="button" class="btn btn-secondary waves-effect waves-light mb-4">
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-4">
                                     <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Receptionist') }}
                                 </button>
                             </a>
@@ -59,21 +59,21 @@
                                             @if ($role == 'admin')
                                                 <a href="{{ url('receptionist/' . $receptionist->id) }}">
                                                     <button type="button"
-                                                        class="btn btn-secondary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                         title="View Profile">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
                                                 </a>
                                                 <a href="{{ url('receptionist/' . $receptionist->id . '/edit') }}">
                                                     <button type="button"
-                                                        class="btn btn-secondary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                         title="Update Profile">
                                                         <i class="mdi mdi-lead-pencil"></i>
                                                     </button>
                                                 </a>
                                                 <a href="javascript:void(0)">
                                                     <button type="button"
-                                                        class="btn btn-secondary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                         title="Deactivate Profile" data-id="{{ $receptionist->id }}"
                                                         id="delete-receptionist">
                                                         <i class="mdi mdi-trash-can"></i>
@@ -82,7 +82,7 @@
                                             @elseif($role == 'doctor')
                                                 <a href="{{ url('receptionist-view/' . $receptionist->id) }}">
                                                     <button type="button"
-                                                        class="btn btn-secondary btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
                                                         title="View Profile">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
