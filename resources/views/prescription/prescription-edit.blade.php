@@ -35,172 +35,172 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <blockquote>{{ __('Prescription Details') }}</blockquote>
                         <form class="outer-repeater" action="{{ url('prescription/' . '' . $prescription->id) }}"
                             method="post">
                             @csrf
                             <input type="hidden" name="_method" value="PATCH" />
                             <input type="hidden" name="id" value="{{ $prescription->id }}" id="form_id" />
-
                             <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label class="control-label">{{ __('Patient ') }}<span
-                                            class="text-danger">*</span></label>
-                                    <select
-                                        class="form-control select2 sel_patient @error('patient_id') is-invalid @enderror"
-                                        name="patient_id" id="patient">
-                                        <option disabled selected>{{ __('Select Patient') }}</option>
-                                        @foreach ($patients as $patient)
-                                            <option value="{{ $patient->id }}"
-                                                {{ $patient->id == $prescription->patient->id ? 'selected' : '' }}>
-                                                {{ $patient->first_name }} {{ $patient->last_name }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('patient_id')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label class="control-label">{{ __('Appointment :') }}<span
-                                            class="text-danger">*</span></label>
-                                    <select
-                                        class="form-control select2 sel_appointment @error('appointment_id') is-invalid @enderror"
-                                        name="appointment_id" id="appointment">
-                                        <option disabled selected>{{ __('Select Appointment') }}</option>
-                                        @foreach ($appointment as $item)
-                                            <option value="{{ $item->id }}"
-                                                {{ $item->id == $prescription->appointment->id ? 'selected' : '' }}>
-                                                {{ $item->appointment_date }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('appointment_id')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <input type="hidden" name="created_by" value="{{ $user->id }}">
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <label class="control-label">{{ __('Symptoms ') }}<span
-                                            class="text-danger">*</span></label>
-                                    <textarea class="form-control @error('symptoms') is-invalid @enderror" name="symptoms"
-                                        id="symptoms" placeholder="{{ __('Add Symptoms') }}"
-                                        rows="3">@if (old('symptoms')){{ old('symptoms') }}@endif {{ $prescription->symptoms }}</textarea>
-                                    @error('symptoms')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label class="control-label">{{ __('Diagnosis ') }}<span
-                                            class="text-danger">*</span></label>
-                                    <textarea class="form-control @error('diagnosis') is-invalid @enderror" name="diagnosis"
-                                        id="diagnosis" placeholder="{{ __('Add Diagnosis') }}"
-                                        rows="3">@if (old('diagnosis')){{ old('diagnosis') }}@endif{{ $prescription->diagnosis }}</textarea>
-                                    @error('diagnosis')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <blockquote>{{ __('Medication & Test Reports Details') }}</blockquote>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class='repeater mb-4'>
-                                        <div data-repeater-list="medicines" class="form-group">
-                                            <label>{{ __('Medicines ') }}<span class="text-danger">*</span></label>
-                                            @foreach ($medicines as $item)
-                                                <div data-repeater-item class="mb-3 row">
-                                                    <div class="col-md-5 col-6">
-                                                        <input type="text" name="medicine" class="form-control"
-                                                            placeholder="{{ __('Medicine Name') }}"
-                                                            value="{{ $item->name }}" />
-                                                    </div>
-                                                    <div class="col-md-5 col-6">
-                                                        <textarea type="text" name="notes" class="form-control"
-                                                            placeholder="{{ __('Notes...') }}">{{ $item->notes }}</textarea>
-                                                    </div>
-                                                    <div class="col-md-2 col-4">
-                                                        <input data-repeater-delete type="button"
-                                                            class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
-                                                            value="X" />
-                                                    </div>
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                        <input data-repeater-create type="button" class="btn btn-primary"
-                                            value="Add Medicine" />
-                                    </div>
-                                </div>
-                                @if ($test_reports->count() == 0)
-                                    <div class="col-md-6">
-                                        <div class='repeater mb-4'>
-                                            <div data-repeater-list="test_reports" class="form-group">
-                                                <label>{{ __('Test Reports ') }}<span
-                                                        class="text-danger">*</span></label>
-                                                <div data-repeater-item class="mb-3 row">
-                                                    <div class="col-md-5 col-6">
-                                                        <input type="text" name="test_report" class="form-control"
-                                                            placeholder="{{ __('Test Report Name') }}" />
-                                                    </div>
-                                                    <div class="col-md-5 col-6">
-                                                        <textarea type="text" name="notes" class="form-control"
-                                                            placeholder="{{ __('Notes...') }}"></textarea>
-                                                    </div>
-                                                    <div class="col-md-2 col-4">
-                                                        <input data-repeater-delete type="button"
-                                                            class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
-                                                            value="X" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <input data-repeater-create type="button" class="btn btn-primary"
-                                                value="Add Test Report" />
-                                        </div>
-                                    </div>
-                                @else
-                                    <div class="col-md-6">
-                                        <div class='repeater mb-4'>
-                                            <div data-repeater-list="test_reports" class="form-group">
-                                                <label>{{ __('Test Reports ') }}<span
-                                                        class="text-danger">*</span></label>
-                                                @foreach ($test_reports as $item)
-                                                    <div data-repeater-item class="mb-3 row">
-                                                        <div class="col-md-5 col-6">
-                                                            <input type="text" name="test_report" class="form-control"
-                                                                placeholder="{{ __('Test Report Name') }}"
-                                                                value="{{ $item->name }}" />
-                                                        </div>
-                                                        <div class="col-md-5 col-6">
-                                                            <textarea type="text" name="notes" class="form-control"
-                                                                placeholder="{{ __('Notes...') }}">{{ $item->notes }}</textarea>
-                                                        </div>
-                                                        <div class="col-md-2 col-4">
-                                                            <input data-repeater-delete type="button"
-                                                                class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
-                                                                value="X" />
-                                                        </div>
-                                                    </div>
+                                <div class="col-md-5 border-right border-success">
+                                    <h4 class="cad-title">{{ __('Prescription Details') }}</h4>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label class="control-label">{{ __('Patient ') }}<span
+                                                    class="text-danger">*</span></label>
+                                            <select
+                                                class="form-control select2 sel_patient @error('patient_id') is-invalid @enderror"
+                                                name="patient_id" id="patient">
+                                                <option disabled selected>{{ __('Select Patient') }}</option>
+                                                @foreach ($patients as $patient)
+                                                    <option value="{{ $patient->id }}"
+                                                        {{ $patient->id == $prescription->patient->id ? 'selected' : '' }}>
+                                                        {{ $patient->first_name }} {{ $patient->last_name }}</option>
                                                 @endforeach
-                                            </div>
-                                            <input data-repeater-create type="button" class="btn btn-primary"
-                                                value="Add Test Report" />
+                                            </select>
+                                            @error('patient_id')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label class="control-label">{{ __('Appointment :') }}<span
+                                                    class="text-danger">*</span></label>
+                                            <select
+                                                class="form-control select2 sel_appointment @error('appointment_id') is-invalid @enderror"
+                                                name="appointment_id" id="appointment">
+                                                <option disabled selected>{{ __('Select Appointment') }}</option>
+                                                @foreach ($appointment as $item)
+                                                    <option value="{{ $item->id }}"
+                                                        {{ $item->id == $prescription->appointment->id ? 'selected' : '' }}>
+                                                        {{ $item->appointment_date }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('appointment_id')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <input type="hidden" name="created_by" value="{{ $user->id }}">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 form-group">
+                                            <label class="control-label">{{ __('Symptoms ') }}<span
+                                                    class="text-danger">*</span></label>
+                                            <textarea class="form-control @error('symptoms') is-invalid @enderror" name="symptoms"
+                                                id="symptoms" placeholder="{{ __('Add Symptoms') }}"
+                                                rows="3">@if (old('symptoms')){{ old('symptoms') }}@endif {{ $prescription->symptoms }}</textarea>
+                                            @error('symptoms')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="col-md-6 form-group">
+                                            <label class="control-label">{{ __('Diagnosis ') }}<span
+                                                    class="text-danger">*</span></label>
+                                            <textarea class="form-control @error('diagnosis') is-invalid @enderror" name="diagnosis"
+                                                id="diagnosis" placeholder="{{ __('Add Diagnosis') }}"
+                                                rows="3">@if (old('diagnosis')){{ old('diagnosis') }}@endif{{ $prescription->diagnosis }}</textarea>
+                                            @error('diagnosis')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
-                                @endif
+                                </div>
+                                <div class="col-md-7 border-left border-success">
+                                    <h4 class="cad-title">{{ __('Medication & Test Reports Details') }}</h4>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class='repeater mb-4'>
+                                                <div data-repeater-list="medicines" class="form-group">
+                                                    <label>{{ __('Medicines ') }}<span class="text-danger">*</span></label>
+                                                    @foreach ($medicines as $item)
+                                                        <div data-repeater-item class="mb-3 row">
+                                                            <div class="col-md-5 col-6">
+                                                                <input type="text" name="medicine" class="form-control"
+                                                                    placeholder="{{ __('Medicine Name') }}"
+                                                                    value="{{ $item->name }}" />
+                                                            </div>
+                                                            <div class="col-md-5 col-6">
+                                                                <textarea type="text" name="notes" class="form-control"
+                                                                    placeholder="{{ __('Notes...') }}">{{ $item->notes }}</textarea>
+                                                            </div>
+                                                            <div class="col-md-2 col-4">
+                                                                <input data-repeater-delete type="button"
+                                                                    class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
+                                                                    value="X" />
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                                <input data-repeater-create type="button" class="btn btn-success" value="Add Medicine" />
+                                            </div>
+                                        </div>
+                                        @if ($test_reports->count() == 0)
+                                            <div class="col-md-6">
+                                                <div class='repeater mb-4'>
+                                                    <div data-repeater-list="test_reports" class="form-group">
+                                                        <label>{{ __('Test Reports ') }}<span
+                                                                class="text-danger">*</span></label>
+                                                        <div data-repeater-item class="mb-3 row">
+                                                            <div class="col-md-5 col-6">
+                                                                <input type="text" name="test_report" class="form-control"
+                                                                    placeholder="{{ __('Test Report Name') }}" />
+                                                            </div>
+                                                            <div class="col-md-5 col-6">
+                                                                <textarea type="text" name="notes" class="form-control"
+                                                                    placeholder="{{ __('Notes...') }}"></textarea>
+                                                            </div>
+                                                            <div class="col-md-2 col-4">
+                                                                <input data-repeater-delete type="button"
+                                                                    class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
+                                                                    value="X" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input data-repeater-create type="button" class="btn btn-success" value="Add Test Report" />
+                                                </div>
+                                            </div>
+                                        @else
+                                            <div class="col-md-6">
+                                                <div class='repeater mb-4'>
+                                                    <div data-repeater-list="test_reports" class="form-group">
+                                                        <label>{{ __('Test Reports ') }}<span
+                                                                class="text-danger">*</span></label>
+                                                        @foreach ($test_reports as $item)
+                                                            <div data-repeater-item class="mb-3 row">
+                                                                <div class="col-md-5 col-6">
+                                                                    <input type="text" name="test_report" class="form-control"
+                                                                        placeholder="{{ __('Test Report Name') }}"
+                                                                        value="{{ $item->name }}" />
+                                                                </div>
+                                                                <div class="col-md-5 col-6">
+                                                                    <textarea type="text" name="notes" class="form-control"
+                                                                        placeholder="{{ __('Notes...') }}">{{ $item->notes }}</textarea>
+                                                                </div>
+                                                                <div class="col-md-2 col-4">
+                                                                    <input data-repeater-delete type="button"
+                                                                        class="fcbtn btn btn-outline btn-danger btn-1d btn-sm inner"
+                                                                        value="X" />
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <input data-repeater-create type="button" class="btn btn-success" value="Add Test Report" />
+                                                </div>
+                                            </div>
+                                        @endif
 
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('Update Prescription') }}
-                                    </button>
+                                    <button type="submit" class="btn btn-success">{{ __('Update Prescription') }}</button>
                                 </div>
                             </div>
                         </form>
