@@ -9,31 +9,13 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="card overflow-hidden">
-                        <div class="bg-soft-primary">
-                            <div class="row">
-                                <div class="col-7">
-                                    <div class="text-primary p-4">
-                                        <h5 class="text-primary">{{ __("Welcome Back !") }}</h5>
-                                        <p>Sign in to continue to HMS.</p>
-                                    </div>
-                                </div>
-                                <div class="col-5 align-self-end">
-                                    <img src="{{ URL::asset('assets/images/profile-img.png') }}" alt=""
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <div>
+                        <div class="card-body">
+                            <div class="text-center">
                                 <a href="{{ url('/') }}">
-                                    <div class="avatar-md profile-user-wid mb-4">
-                                        <span class="avatar-title rounded-circle bg-light">
-                                            <img src="{{ URL::asset('assets/images/logo.png') }}" alt=""
-                                                class="rounded-circle" height="34">
-                                        </span>
-                                    </div>
+                                    <img src="{{ URL::asset('assets/images/logo.png') }}" alt="" class="rounded-circle" height="34">
                                 </a>
                             </div>
+                            <h2 class="text-center">Login</h2>
                             <div class="p-2">
                                 <form class="form-horizontal" method="POST" action="{{ url('login') }}">
                                     @csrf
@@ -85,13 +67,17 @@
                                     </div>
                                 </form>
                             </div>
+                            <hr/>
+                            <div class="text-center">
+                                {{ __("Don't have an account ?") }} <a href="{{ url('register') }}" class="font-weight-medium text-primary"> {{ __("Sign Up here") }}</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="mt-5 text-center">
+                    <!-- <div class="mt-5 text-center">
                         <p>{{ __("Don't have an account ?") }} <a href="{{ url('register') }}"
                                 class="font-weight-medium text-primary"> {{ __("Sign Up here") }}</a> </p>
                         <p>© {{ date('Y') }} HMS</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
