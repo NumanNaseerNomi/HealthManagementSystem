@@ -39,7 +39,7 @@
                                 id="selected_date"><?php echo date('d M, Y'); ?></label>
                         </h4>
                         <div id="appointment_list">
-                            <table class="table text-striped dt-responsive nowrap">
+                            <table class="table table-striped dt-responsive nowrap">
                                 <thead class="bg-success text-dark">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
