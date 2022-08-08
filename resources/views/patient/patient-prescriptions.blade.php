@@ -12,9 +12,6 @@
             @slot('li_2') Prescription @endslot
         @endcomponent
         <!-- end page title -->
-        <div class="alert alert-warning" role="alert">
-            You can not saw prescription without  invoice payment
-        </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -27,9 +24,8 @@
                                 </button>
                             </a>
                         @endif
-                        <table class="table table-bordered dt-responsive nowrap "
-                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
+                        <table class="table table-striped dt-responsive nowrap">
+                            <thead class="bg-success text-dark">
                                 <tr>
                                     <th>{{ __('Sr. No') }}</th>
                                     @if ($role == 'doctor')
@@ -84,9 +80,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{ url('prescription-view/' . $item->appointment->prescription->id) }}">
-                                                    <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                        title="View item">
+                                                    <button type="button" class="btn btn-success btn-sm btn-rounded waves-effect waves-light" title="View item">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
                                                 </a>
