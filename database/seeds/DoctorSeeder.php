@@ -22,8 +22,8 @@ class DoctorSeeder extends Seeder
             'last_name' => 'Doctorly',
             'mobile' => '5142323114',
             'profile_photo' => 'Female_doctor.png',
-            'email' => 'doctor@themesbrand.website',
-            'password' => 'doctor@123456',
+            'email' => 'doctor@doctor.com',
+            'password' => 'doctor@doctor.com',
         ];
         $user = Sentinel::registerAndActivate($user);
         $role = Sentinel::findRoleBySlug('doctor');
