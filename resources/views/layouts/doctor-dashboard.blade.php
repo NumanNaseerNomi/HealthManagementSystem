@@ -93,7 +93,7 @@
                                     <td>
                                         <a href="tel:{{ $item->patient->mobile }}">
                                             <button type="button"
-                                                class="btn btn-primary btn-sm btn-rounded waves-effect waves-light bg-success text-dark"
+                                                class="btn btn-success btn-sm btn-rounded waves-effect waves-light"
                                                 data-toggle="modal" data-target=".exampleModal">
                                                 {{ __('Call') }}
                                             </button>
