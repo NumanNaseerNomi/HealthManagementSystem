@@ -33,7 +33,7 @@
                         <form class="outer-repeater" action="{{ route('prescription.store') }}" method="post">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6  border-right border-success">
                                     <h4 class="card-title">{{ __('Prescription Details') }}</h4>
                                     <div class="row">
                                         <div class="col-md-6 form-group">
@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6 border-left border-success">
                                     <h4 class="card-title">{{ __('Medication & Test Reports Details') }}</h4>
                                     <div class="row">
                                         <div class="col-md-6">
