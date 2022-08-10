@@ -102,14 +102,13 @@
                                         @enderror
                                     </div>
                                     <div class="mt-4">
-                                        <button class="btn btn-primary btn-block waves-effect waves-light"
-                                            type="submit">{{ __("Register") }}</button>
+                                        <button class="btn btn-success btn-block waves-effect waves-light" type="submit">{{ __("Register") }}</button>
                                     </div>
                                 </form>
                             </div>
                             <hr/>
                             <div class="text-center">
-                                {{ __("Already have an account ?") }} <a href="{{ url('login') }}" class="font-weight-medium text-primary">{{ __("Login") }} </a>
+                                {{ __("Already have an account ?") }} <a href="{{ url('login') }}" class="font-weight-medium text-success">{{ __("Login") }} </a>
                             </div>
                         </div>
                     </div>
