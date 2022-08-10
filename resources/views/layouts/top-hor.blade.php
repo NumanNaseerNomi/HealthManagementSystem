@@ -5,16 +5,16 @@
             <div class="navbar-brand-box">
                 <a href="{{ url('/') }}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="22">
+                        <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="22">
+                        <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="22">
                     </span>
                 </a>
                 <a href="{{ url('/') }}" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="" height="22">
-                        <spann class="text-light">HMS</spann>
+                        <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="22">
+                        <span class="text-dark"><strong>HMS</strong></span>
                     </span>
                     <span class="logo-lg">
                         <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="" height="22">
@@ -22,12 +22,11 @@
                     </span>
                 </a>
             </div>
-            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
-                data-toggle="collapse" data-target="#topnav-menu-content">
-                <i class="fa fa-fw fa-bars"></i>
+            <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+                <i class="fa fa-fw fa-bars text-dark"></i>
             </button>
         </div>
-        <div class="d-flex">
+        <!-- <div class="d-flex">
             <div class="dropdown d-inline-block d-lg-none ml-2">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,10 +48,9 @@
                     </form>
                 </div>
             </div>
-            <!-- App Search-->
-        </div>
+        </div> -->
         <div class="d-flex">
-            <div class="dropdown d-inline-block d-lg-none ml-2">
+            <!-- <div class="dropdown d-inline-block d-lg-none ml-2">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="mdi mdi-magnify"></i>
@@ -72,7 +70,7 @@
                         </div>
                     </form>
                 </div>
-            </div>
+            </div> -->
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -118,8 +116,8 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect text-dark" id="page-header-user-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="d-none d-xl-inline-block ml-1">{{ $user->first_name }}</span>
-                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                    <span class="d-xl-inline-block ml-1">{{ $user->first_name }}</span>
+                    <i class="mdi mdi-chevron-down d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
