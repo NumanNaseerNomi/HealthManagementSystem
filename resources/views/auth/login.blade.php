@@ -58,8 +58,7 @@
                                         <label class="custom-control-label" for="customControlInline">{{ __("Remember me") }}</label>
                                     </div>
                                     <div class="mt-3">
-                                        <button class="btn btn-primary btn-block waves-effect waves-light"
-                                            type="submit">{{ __("Log In") }}</button>
+                                        <button class="btn btn-success btn-block waves-effect waves-light" type="submit">{{ __("Log In") }}</button>
                                     </div>
                                     <div class="mt-4 text-center">
                                         <a href="{{ url('forgot-password') }}" class="text-muted"><i
@@ -69,7 +68,7 @@
                             </div>
                             <hr/>
                             <div class="text-center">
-                                {{ __("Don't have an account ?") }} <a href="{{ url('register') }}" class="font-weight-medium text-primary"> {{ __("Sign Up here") }}</a>
+                                {{ __("Don't have an account ?") }} <a href="{{ url('register') }}" class="font-weight-medium text-success"> {{ __("Sign Up here") }}</a>
                             </div>
                         </div>
                     </div>
