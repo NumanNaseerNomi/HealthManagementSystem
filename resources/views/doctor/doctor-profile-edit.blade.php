@@ -35,9 +35,8 @@
                 @if ($doctor && $doctor_info)
                     @if ($role == 'doctor')
                         <a href="{{ url('/') }}">
-                            <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
-                                <i
-                                    class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>{{ __('Back to Dashboard') }}
+                            <button type="button" class="btn btn-success waves-effect waves-light mb-4">
+                                <i class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>{{ __('Back to Dashboard') }}
                             </button>
                         </a>
                     @else
@@ -62,7 +61,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <blockquote>{{ __('Basic Information') }}</blockquote>
+                        <h4>{{ __('Basic Information') }}</h4>
                         <form action="{{ url('profile-update') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -261,7 +260,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-success">
                                         @if ($doctor && $doctor_info)
                                             {{ __('Update Details') }}
                                         @else
