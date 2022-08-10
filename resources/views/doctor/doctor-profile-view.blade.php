@@ -95,6 +95,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        <a href="{{ url('profile-edit') }}" class="btn btn-success waves-effect waves-light btn-sm">{{ __('Edit Profile ') }}</a>
+                        <a href="{{ url('time-edit/' . $doctor->id) }}" class="btn btn-success waves-effect waves-light btn-sm">{{ __('Edit Time Slot') }}</a>
                     </div>
                 </div>
                 <!-- end card -->
