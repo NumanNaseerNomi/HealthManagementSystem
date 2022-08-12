@@ -285,24 +285,24 @@ class PrescriptionController extends Controller
     {
         $user = Sentinel::getUser();
         $role = $user->roles[0]->slug;
-        // $prescriptions = Prescription::with(['doctor', 'appointment', 'appointment.timeSlot','appointment.invoice'])
-        // ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')->paginate($this->limit);
-        $prescription = Invoice::where('payment_status','Paid')
-        ->with('doctor', 'appointment','appointment.timeSlot','appointment.invoice','appointment.prescription')
-        ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')
-        ->paginate($this->limit);
-        $prescriptions = collect();
-        foreach ($prescription as $key => $value) {
-            if($value['appointment']['prescription']){
-                $prescriptions->push($value['id']);
-            }
-            else{
-                $pre = $prescriptions;
-            }
-        }
-        $prescriptions_details = Invoice::where('payment_status','Paid')->with('doctor','appointment', 'appointment.timeSlot','appointment.prescription')
-            ->WhereIn('id',$prescriptions)->orderBy('id', 'desc')
-            ->paginate($this->limit);
+        $prescriptions_details = Prescription::with(['doctor', 'appointment', 'appointment.timeSlot','appointment.invoice'])
+        ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')->paginate($this->limit);
+        // $prescription = Invoice::where('payment_status','Paid')
+        // ->with('doctor', 'appointment','appointment.timeSlot','appointment.invoice','appointment.prescription')
+        // ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')
+        // ->paginate($this->limit);
+        // $prescriptions = collect();
+        // foreach ($prescription as $key => $value) {
+        //     if($value['appointment']['prescription']){
+        //         $prescriptions->push($value['id']);
+        //     }
+        //     else{
+        //         $pre = $prescriptions;
+        //     }
+        // }
+        // $prescriptions_details = Invoice::where('payment_status','Paid')->with('doctor','appointment', 'appointment.timeSlot','appointment.prescription')
+        //     ->WhereIn('id',$prescriptions)->orderBy('id', 'desc')
+        //     ->paginate($this->limit);
         // return $prescriptions_details;
         return view('patient.patient-prescriptions', compact('user', 'role', 'prescriptions_details'));
     }
