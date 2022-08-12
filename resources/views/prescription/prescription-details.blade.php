@@ -106,11 +106,11 @@
                                                     <label>{{ __('Medicines ') }}<span class="text-danger">*</span></label>
                                                     <div data-repeater-item class="mb-3">
                                                         <input type="text" name="medicine" class="form-control" placeholder="{{ __('Medicine Name') }}" />
-                                                    </div>
-                                                </div>
-                                                <div data-repeater-list="medicines" class="form-group">
+                                                    <!-- </div> -->
+                                                <!-- </div>
+                                                <div data-repeater-list="medicines" class="form-group"> -->
                                                     <label>{{ __('Note') }}</label>
-                                                    <div data-repeater-item class="mb-3">
+                                                    <!-- <div data-repeater-item class="mb-3"> -->
                                                         <textarea type="text" name="notes" class="form-control" rows="3" placeholder="{{ __('Notes...') }}"></textarea>
                                                     </div>
                                                 </div>
@@ -123,11 +123,11 @@
                                                     <label>{{ __('Test Reports ') }}</label>
                                                     <div data-repeater-item class="mb-3">
                                                         <input type="text" name="test_report" class="form-control" placeholder="{{ __('Test Report Name') }}" />
-                                                    </div>
+                                                    <!-- </div>
                                                 </div>
-                                                <div data-repeater-list="test_reports" class="form-group">
+                                                <div data-repeater-list="test_reports" class="form-group"> -->
                                                     <label>{{ __('Note') }}</label>
-                                                    <div data-repeater-item class="mb-3">
+                                                    <!-- <div data-repeater-item class="mb-3"> -->
                                                         <textarea type="text" name="notes" class="form-control" rows="3" placeholder="{{ __('Notes...') }}"></textarea>
                                                     </div>
                                                 </div>
