@@ -316,14 +316,14 @@ class PrescriptionController extends Controller
         // ->where('patient_id', $user->id)->orWhere('id', $id)->where('is_deleted', 0)->first();
         // return $user_details;
         if ($user_details) {
-            if($user_details->appointment->invoice){
+            // if($user_details->appointment->invoice){
                 $medicines = Medicine::where('prescription_id', $id)->where('is_deleted', 0)->get();
                 $test_reports = TestReport::where('prescription_id', $id)->where('is_deleted', 0)->get();
                 return view('patient.patient-prescription-view', compact('user', 'role', 'medicines', 'test_reports', 'user_details'));
-            }
-            else{
-                return redirect()->back()->with('error', 'Invoice details not found');
-            }
+            // }
+            // else{
+            //     return redirect()->back()->with('error', 'Invoice details not found');
+            // }
         } else {
             return redirect()->back()->with('error', 'Prescription not found');
         }
