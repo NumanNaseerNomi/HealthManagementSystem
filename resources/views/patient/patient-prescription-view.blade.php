@@ -16,7 +16,7 @@
         <div class="row d-print-none">
             <div class="col-12">
                 <a href="{{ url('prescription-list') }}">
-                    <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
+                    <button type="button" class="btn btn-success waves-effect waves-light mb-4">
                         <i
                             class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>{{ __('Back to Prescription List') }}
                     </button>
@@ -33,7 +33,7 @@
                         <div class="invoice-title">
                             <h4 class="float-right font-size-16">Prescription #{{ $user_details->id }}</h4>
                             <div class="mb-4">
-                                <img src="{{ URL::asset('assets/images/logo-dark.png') }}" alt="logo" height="20" />
+                                <img src="{{ URL::asset('assets/images/logo-dark1.png') }}" alt="logo" height="20" />
                             </div>
                         </div>
                         <hr>
@@ -83,8 +83,8 @@
                                     <h3 class="font-size-15 font-weight-bold">{{ __('Medications') }}</h3>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
+                                    <table class="table table-striped dt-responsive nowrap">
+                                        <thead class="bg-success text-dark">
                                             <tr>
                                                 <th style="width: 70px;">{{ __('No.') }}</th>
                                                 <th>{{ __('Name') }}</th>
@@ -108,8 +108,8 @@
                                     <h3 class="font-size-15 font-weight-bold">{{ __('Test Reports') }}</h3>
                                 </div>
                                 <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
+                                    <table class="table table-striped dt-responsive nowrap">
+                                        <thead class="bg-success text-dark">
                                             <tr>
                                                 <th style="width: 70px;">{{ __('No.') }}</th>
                                                 <th>{{ __('Name') }}</th>
