@@ -79,7 +79,7 @@
                                             <td>{{ $item->appointment->timeSlot->from . ' to ' . $item->appointment->timeSlot->to }}
                                             </td>
                                             <td>
-                                                <a href="{{ url('prescription-view/' . $item->appointment->prescription->id) }}">
+                                                <a href="{{ url('prescription-view/' . $item->id) }}">
                                                     <button type="button" class="btn btn-success btn-sm btn-rounded waves-effect waves-light" title="View item">
                                                         <i class="mdi mdi-eye"></i>
                                                     </button>
