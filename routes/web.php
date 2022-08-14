@@ -108,4 +108,7 @@ Route::get('paymentComplete', [StripePaymentController::class, 'payment_complete
 // Payment Api key add
 Route::resource('payment-key','PaymentApiController');
 
+// iMessages
+Route::get('iMessages', 'MessagesController@chats');
+
 });
