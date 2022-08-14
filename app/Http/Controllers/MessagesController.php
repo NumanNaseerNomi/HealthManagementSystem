@@ -10,8 +10,8 @@ class MessagesController extends Controller
     function chats()
     {
         $user = Sentinel::getUser();
-        
-        if ($user->hasAccess('patient.create'))
+
+        if ($user)
         {
             $role = $user->roles[0]->slug;
             $patient = null;
