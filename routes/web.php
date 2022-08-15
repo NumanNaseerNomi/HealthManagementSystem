@@ -110,5 +110,6 @@ Route::resource('payment-key','PaymentApiController');
 
 // iMessages
 Route::get('iMessages', 'MessagesController@chats');
+Route::get('getChatUsers', 'MessagesController@getChatUsers');
 
 });
