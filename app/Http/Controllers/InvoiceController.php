@@ -266,8 +266,7 @@ class InvoiceController extends Controller
                 $role = $user->roles[0]->slug;
                 $doctor_role = Sentinel::findRoleBySlug('doctor');
                 if ($role == 'doctor') {
-                    $appointment = Appointment::where('id', $user_id)->orWhere('appointment_for', $patient_id)->where('appointment_with', $user_id)->where('status', 1)
-                    ->orderBy('id', 'DESC')->pluck("appointment_date", "id")->all();
+                    $appointment = Appointment::where('appointment_for', $patient_id)->where('appointment_with', $user_id)->where('status', 0)->orderBy('appointment_date')->pluck("appointment_date", "id")->all();
                 } elseif ($role == 'receptionist') {
                     $receptionists_doctor_id = ReceptionListDoctor::where('reception_id', $user_id)->pluck('doctor_id');
                     $appointment  = Appointment::where('appointment_for', $patient_id)->whereIN('appointment_with', $receptionists_doctor_id)->where('status', 1)
