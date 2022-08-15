@@ -11,13 +11,14 @@
             <div class="row">
                 <div class="col-12 col-md-4 border-right border-success">
                     <h5 class="card-title">Chats</h5>
-                    <div class="card" type="button">
-                        <div class="card-body border border-success">user name</div>
-                    </div>
-
-                    <div class="card" type="button">
-                        <div class="card-body border border-success">user name</div>
-                    </div>
+                    @foreach($chatUsers as $item)
+                        <div class="card" type="button" onclick="alert({{$item->user->id}})">
+                            <div class="card-body border border-success">
+                                <strong>{{$item->user->first_name}} {{$item->user->last_name}}</strong>
+                                <div>{{$item->user->email}}</div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="col-12 col-md-8 border-left border-success">
                     <h5 class="card-title">user name</h5>
