@@ -21,30 +21,34 @@
                     @endforeach
                 </div>
                 <div class="col-12 col-md-8 border-left border-success">
-                    <h5 class="card-title">user name</h5>
+                    <h5 class="card-title"><strong>{{$messages[0]->user->first_name}} {{$messages[0]->user->last_name}}</strong> ({{$messages[0]->user->email}})</h5>
                     <div class="card">
                         @foreach($messages as $message)
                             @if($user->id == $message->from)
                                 <div class="card-body text-right">
-                                    <span class="border border-success p-2">
-                                        <strong>YOU: </strong> {{$message->body}}
+                                    <span class="bg-success text-white p-2 d-inline-block">
+                                        <strong>YOU:</strong> {{$message->created_at}} <br/>
+                                        {{$message->body}}
                                     </span>
                                 </div>
                             @else
                                 <div class="card-body">
-                                    <span class="border border-primary p-2">
-                                        <strong>{{$message->user->first_name}} {{$message->user->last_name}}: </strong>  {{$message->body}}
+                                    <span class="bg-primary text-white p-2 d-inline-block">
+                                        <strong>{{$message->user->first_name}} {{$message->user->last_name}}:</strong> {{$message->created_at}} <br/> 
+                                        {{$message->body}}
                                     </span>
                                 </div>
                             @endif
                         @endforeach
                     </div>
                     <div class="card-footer">
-                        <form>
+                        <form method="post" action="{{ url('sendMessage') }}">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control form-control-success" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                @csrf
+                                <input type="hidden" name="to" value="{{$messages[0]->user->id}}">
+                                <input type="text" name="message" id="message" class="form-control form-control-success" placeholder="Write your message..." required>
                                 <div class="input-group-append">
-                                    <button class="btn btn-success" type="button" id="button-addon2">Send</button>
+                                    <button class="btn btn-success" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -57,5 +61,15 @@
     @endsection
     @section('script')
         <script>
+            window.setTimeout(
+                () =>
+                {
+                    if(!document.querySelector("#message").value.length)
+                    {
+                        location.reload();
+                    }
+                },
+                10000
+            );
         </script>
     @endsection
