@@ -19,14 +19,15 @@ class MessagesController extends Controller
             $patient = null;
             $patient_info = null;
             $medical_info = null;
+
             $chatUsersTo = MessagesModel::where("from", $user->id)->get()->unique("to")->pluck("to")->toArray();
             $chatUsersFrom = MessagesModel::where("to", $user->id)->get()->unique("from")->pluck("from")->toArray();
-
             $chatUsersIds = array_unique(array_merge($chatUsersTo,  $chatUsersFrom));
 
             $chatUsers = User::whereIn("id", $chatUsersIds)->get();
+            $messages = MessagesModel::where("from", $chatUsers[0]->id)->orWhere("to", $chatUsers[0]->id)->get();
 
-            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers"));
+            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "messages"));
         }
         else
         {
@@ -44,6 +45,20 @@ class MessagesController extends Controller
 
     function sendMessage(Request $request)
     {
-        dd($request);
+        $request->validate(
+            [
+                '_token' => 'required',
+                'to' => 'required',
+                'message' => 'required'
+            ]
+        );
+
+        $newMessage = new MessagesModel;
+        $newMessage->from = Sentinel::getUser()->id;
+        $newMessage->to = $request->to;
+        $newMessage->body = $request->message;
+        $newMessage->save();
+
+        return redirect()->back();
     }
 }
