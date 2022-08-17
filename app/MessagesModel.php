@@ -12,6 +12,6 @@ class MessagesModel extends Model
 
     function user()
     {
-        return $this->hasOne(User::class, 'id', 'to');
+        return $this->hasOne(User::class, 'id', 'from');
     }
 }
