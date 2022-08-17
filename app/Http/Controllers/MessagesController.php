@@ -5,23 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use App\MessagesModel;
+use App\User;
 
 class MessagesController extends Controller
 {
     function chats()
     {
-        // dd(MessagesModel::all());
         $user = Sentinel::getUser();
-        // dd($user);
 
-        if ($user)
+        if($user)
         {
             $role = $user->roles[0]->slug;
             $patient = null;
             $patient_info = null;
             $medical_info = null;
-            $chatUsers = MessagesModel::where("from", $user->id)->get()->unique('to');
-            // dd($chatUsers);
+            $chatUsersTo = MessagesModel::where("from", $user->id)->get()->unique("to")->pluck("to")->toArray();
+            $chatUsersFrom = MessagesModel::where("to", $user->id)->get()->unique("from")->pluck("from")->toArray();
+
+            $chatUsersIds = array_unique(array_merge($chatUsersTo,  $chatUsersFrom));
+
+            $chatUsers = User::whereIn("id", $chatUsersIds)->get();
 
             return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers"));
         }
