@@ -9,8 +9,9 @@ use App\User;
 
 class MessagesController extends Controller
 {
-    function chats()
+    function chats(Request $request)
     {
+        // dd(count($request->all()));
         $user = Sentinel::getUser();
 
         if($user)
@@ -25,7 +26,16 @@ class MessagesController extends Controller
             $chatUsersIds = array_unique(array_merge($chatUsersTo,  $chatUsersFrom));
 
             $chatUsers = User::whereIn("id", $chatUsersIds)->get();
-            $messages = MessagesModel::where("from", $chatUsers[0]->id)->orWhere("to", $chatUsers[0]->id)->get();
+
+            if(count($request->all()))
+            {
+                // dd($request->id);
+                $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
+            }
+            else
+            {
+                $messages = MessagesModel::where("from", $chatUsers[0]->id)->orWhere("to", $chatUsers[0]->id)->get();
+            }
 
             return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "messages"));
         }
