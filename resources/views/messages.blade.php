@@ -12,12 +12,13 @@
                 <div class="col-12 col-md-4 border-right border-success">
                     <h5 class="card-title">Chats</h5>
                     @foreach($chatUsers as $chatUser)
-                        <div class="card" type="button" onclick="alert({{$chatUser->id}})">
-                            <div class="card-body border border-success">
-                                <strong>{{$chatUser->first_name}} {{$chatUser->last_name}}</strong>
-                                <div>{{$chatUser->email}}</div>
-                            </div>
-                        </div>
+                    <form method="get" action="{{ url('iMessages') }}">
+                        <input type="hidden" name="id" value="{{$chatUser->id}}">
+                        <button type="submit" class="btn btn-success btn-block my-3">
+                            <strong>{{$chatUser->first_name}} {{$chatUser->last_name}}</strong>
+                            <div>{{$chatUser->email}}</div>
+                        </button>
+                    </form>
                     @endforeach
                 </div>
                 <div class="col-12 col-md-8 border-left border-success">
