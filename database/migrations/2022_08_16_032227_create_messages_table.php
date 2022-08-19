@@ -17,7 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->integer('from')->comment('User ID');
             $table->integer('to')->comment('User ID');
-            $table->string('body')->comment('Text Message');
+            $table->longText('body')->comment('Text Message');
             $table->timestamps();
         });
     }
