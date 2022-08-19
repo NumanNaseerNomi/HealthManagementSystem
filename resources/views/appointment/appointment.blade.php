@@ -85,7 +85,12 @@
                                                 <td> {{ $i }} </td>
                                                 <td>{{ $appointment->patient->first_name . ' ' . $appointment->patient->last_name }}
                                                 </td>
-                                                <td>{{ $appointment->patient->mobile }}</td>
+                                                <td>
+                                                    <a href="/iMessages?id={{$appointment->patient->id}}" role="button">
+                                                        <i class="bx bx-chat text-light bg-success p-1 rounded-circle"></i>
+                                                    </a> 
+                                                    {{ $appointment->patient->mobile }}
+                                                </td>
                                                 <td>
                                                     {{ $appointment->timeSlot->from . ' to ' . $appointment->timeSlot->to }}
                                                 </td>
@@ -100,7 +105,12 @@
                                                 <td> {{ $i }} </td>
                                                 <td>{{ $appointment->doctor->first_name . ' ' . $appointment->doctor->last_name }}
                                                 </td>
-                                                <td>{{ $appointment->doctor->mobile }}</td>
+                                                <td>
+                                                    <a href="/iMessages?id={{$appointment->doctor->id}}" role="button">
+                                                        <i class="bx bx-chat text-light bg-success p-1 rounded-circle"></i>
+                                                    </a> 
+                                                    {{ $appointment->doctor->mobile }}
+                                                </td>
                                                 <td>
                                                     {{ $appointment->timeSlot->from . ' to ' . $appointment->timeSlot->to }}
                                                 </td>
