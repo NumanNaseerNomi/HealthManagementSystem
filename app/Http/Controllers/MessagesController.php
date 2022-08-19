@@ -17,9 +17,11 @@ class MessagesController extends Controller
         {
             return redirect()->back();
         }
-
-        if($user)
+        else
         {
+
+        // if($user)
+        // {
             $role = $user->roles[0]->slug;
             $patient = null;
             $patient_info = null;
@@ -39,16 +41,24 @@ class MessagesController extends Controller
             }
             else
             {
-                $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
                 $chatUser = User::where("id", $request->id)->first();
+
+                if($chatUser)
+                {
+                    $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
+                }
+                else
+                {
+                    return redirect()->back();
+                }
             }
 
             return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages"));
         }
-        else
-        {
-            return redirect('login')->with('error','Please Login');
-        }
+        // else
+        // {
+        //     return redirect('loginTest')->with('error','Please Login');
+        // }
     }
 
     function sendMessage(Request $request)
