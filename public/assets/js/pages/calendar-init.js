@@ -134,7 +134,7 @@ $(document).ready(function() {
                                 let from = appointments.time_slot.from;
                                 let to = appointments.time_slot.to;
                                 let mobile = appointments.doctor.mobile
-                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td>" + mobile + "</td><td>" + from + " to " + to +
+                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td><a href='/iMessages?id=" + appointments.doctor.id + "' role='button'><i class='bx bx-chat text-light bg-success p-1 rounded-circle'></i></a> " + mobile + "</td><td>" + from + " to " + to +
                                     "</td></td>";
                                 t++;
                             });
@@ -146,7 +146,7 @@ $(document).ready(function() {
                                 let from = appointments.time_slot.from;
                                 let to = appointments.time_slot.to;
                                 let mobile = appointments.patient.mobile
-                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td>" + mobile + "</td><td>" + from + " to " + to +
+                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td><a href='/iMessages?id=" + appointments.patient.id + "' role='button'><i class='bx bx-chat text-light bg-success p-1 rounded-circle'></i></a> " + mobile + "</td><td>" + from + " to " + to +
                                     "</td></td>";
                                 t++;
                             });
