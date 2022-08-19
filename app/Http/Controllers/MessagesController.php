@@ -11,8 +11,12 @@ class MessagesController extends Controller
 {
     function chats(Request $request)
     {
-        // dd(count($request->all()));
         $user = Sentinel::getUser();
+
+        if($user->id == $request->id)
+        {
+            return redirect()->back();
+        }
 
         if($user)
         {
@@ -27,17 +31,19 @@ class MessagesController extends Controller
 
             $chatUsers = User::whereIn("id", $chatUsersIds)->get();
 
-            if(count($request->all()))
+            if(empty($request->all()))
             {
-                // dd($request->id);
-                $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
+                $messages = collect();
+                $chatUser = collect();
+                $chatUser->id = null;
             }
             else
             {
-                $messages = MessagesModel::where("from", $chatUsers[0]->id)->orWhere("to", $chatUsers[0]->id)->get();
+                $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
+                $chatUser = User::where("id", $request->id)->first();
             }
 
-            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "messages"));
+            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages"));
         }
         else
         {
