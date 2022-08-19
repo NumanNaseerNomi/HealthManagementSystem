@@ -51,14 +51,6 @@ class MessagesController extends Controller
         }
     }
 
-    function getChatUsers()
-    {
-        $user = Sentinel::getUser();
-        $chatUsers = MessagesModel::where("from", $user->id)->get();
-        dd($chatUsers);
-        // dd($user->id);
-    }
-
     function sendMessage(Request $request)
     {
         $request->validate(
