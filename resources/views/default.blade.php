@@ -255,7 +255,7 @@
 						<span>24 Hours Service</span>
 						<h4 class="mb-3">Online Appoinment</h4>
 						<p class="mb-4">Get ALl time support for emergency.We have introduced the principle of family medicine.</p>
-						<a href="appoinment.html" class="btn btn-main btn-round-full">Make a appoinment</a>
+						<a href="{{ url('/appointment-create') }}" class="btn btn-main btn-round-full">Make a appoinment</a>
 					</div>
 				
 					<div class="feature-item mb-5 mb-lg-0">
@@ -265,7 +265,7 @@
 						<span>Online Consultation</span>
 						<h4 class="mb-3">Chat with Doctor</h4>
 						<p class="mb-4">Get ALl time support for emergency.We have introduced the principle of family medicine.</p>
-						<a href="appoinment.html" class="btn btn-main btn-round-full">Consult</a>
+						<a href="{{ url('/appointment-create') }}" class="btn btn-main btn-round-full">Consult</a>
 					</div>
 				 
 					<div class="feature-item mb-5 mb-lg-0">
@@ -303,7 +303,7 @@
 					<h2 class="title-color">Personal care <br>& healthy living</h2>
 					<p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
 
-					<a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+					<a href="{{ url('/services') }}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
 				</div>
 			</div>
 		</div>
@@ -462,7 +462,7 @@
 				<div class="appoinment-wrap mt-5 mt-lg-0">
 					<h2 class="mb-2 title-color">Book appoinment</h2>
 					<p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-					     <form id="#" class="appoinment-form" method="post" action="#">
+					     <!-- <form id="#" class="appoinment-form" method="post" action="#">
                     <div class="row">
                          <div class="col-lg-6">
                             <div class="form-group">
@@ -518,10 +518,10 @@
                     </div>
                     <div class="form-group-2 mb-4">
                         <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
-                    </div>
+                    </div> -->
 
-                    <a class="btn btn-main btn-round-full" href="appoinment.html" >Make Appoinment <i class="icofont-simple-right ml-2  "></i></a>
-                </form>
+                    <a class="btn btn-main btn-round-full" href="{{ url('/appointment-create') }}" >Make Appoinment <i class="icofont-simple-right ml-2  "></i></a>
+                <!-- </form> -->
             </div>
 			</div>
 		</div>
