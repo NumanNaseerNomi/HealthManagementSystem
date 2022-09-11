@@ -51,7 +51,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navigation" id="navbar">
 		<div class="container">
-		 	 <a class="navbar-brand" href="index.html">
+		 	 <a class="navbar-brand" href="{{ url('/') }}">
 			  	<img src="{{ URL::asset('hms/images/logo.png') }}" alt="" class="img-fluid" style="height: 100px; width: 100px">
 				<a><h3>My Health Care</h3> <h6>Health Management System</h6></a>
 
@@ -64,10 +64,10 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
-				<a class="nav-link" href="index.html">Home</a>
+				<a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
 			  </li>
 
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="department.html" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Diseases <i class="icofont-thin-down"></i></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown02">
 						<a class="dropdown-item">A</a>
@@ -190,25 +190,25 @@
 						<li><a class="dropdown-item" href="department.html">Yeast Infection</a></li>
 						<li><a class="dropdown-item" href="department.html">Yellow fever</a></li>
 					</ul>
-				</li>
+				</li> -->
 
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown03">
 						<li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
 						<li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
 						<li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
 					</ul>
-				</li>
+				</li> -->
 
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts <i class="icofont-thin-down"></i></a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown05">
 						<li><a class="dropdown-item" href="Doctor%20accounts.html">Doctor Accounts</a></li>
 
 						<li><a class="dropdown-item" href="Lab%20reporter%20account.html">Lab Reporter Accounts</a></li>
 					</ul>
-				</li>
+				</li> -->
 
 			   <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 				<a class="nav-link" href="service.html">Services</a></li>
@@ -234,7 +234,7 @@
 					
 					<p class="mb-4 pr-5">This online health management system provides real-time healthcare advice and counseling via the Medical professionals who are licensed.</p>
 					<div class="btn-container ">
-						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i class="icofont-simple-right ml-2  "></i></a>
+						<a href="{{ url('/appointment-create') }}" class="btn btn-main-2 btn-icon btn-round-full">Make appoinment <i class="icofont-simple-right ml-2  "></i></a>
 					</div>
 				</div>
 			</div>
