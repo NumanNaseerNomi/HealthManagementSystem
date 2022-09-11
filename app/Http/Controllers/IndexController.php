@@ -8,6 +8,6 @@ class IndexController extends Controller
 {
     function index()
     {
-        dd(1);
+        return view("default");
     }
 }
