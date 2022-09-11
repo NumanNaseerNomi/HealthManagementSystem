@@ -16,9 +16,9 @@ use App\Http\Controllers\StripePaymentController;
 */
 
 Route::view("/", "default");
-Route::view("/about", "default");
+Route::view("/about", "about");
 Route::view("/services", "default");
-Route::view("/about", "contact");
+Route::view("/contact", "contact");
 
 Route::get('/dashboard', 'HomeController@index');
 
