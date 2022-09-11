@@ -4,7 +4,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="topnav-menu-content">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">
+                        <a class="nav-link" href="{{ url('/dashboard') }}">
                             <i class="bx bx-home-circle mr-2"></i>{{ __('Dashboard') }}
                         </a>
                     </li>

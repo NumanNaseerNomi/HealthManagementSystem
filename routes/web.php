@@ -16,6 +16,7 @@ use App\Http\Controllers\StripePaymentController;
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@index');
 
 // authentication routes
 Route::get('login', 'Auth\AuthController@showLoginForm');
