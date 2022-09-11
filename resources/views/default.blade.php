@@ -210,9 +210,9 @@
 					</ul>
 				</li> -->
 
-			   <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-				<a class="nav-link" href="service.html">Services</a></li>
-			   <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">About</a></li>
+				<a class="nav-link" href="{{ url('/services') }}">Services</a></li>
+			   <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">Contact</a></li>
 			</ul>
 		  </div>
 		</div>
