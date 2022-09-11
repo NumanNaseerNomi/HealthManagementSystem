@@ -15,7 +15,11 @@ use App\Http\Controllers\StripePaymentController;
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::view("/", "default");
+Route::view("/about", "default");
+Route::view("/services", "default");
+Route::view("/about", "contact");
+
 Route::get('/dashboard', 'HomeController@index');
 
 // authentication routes
