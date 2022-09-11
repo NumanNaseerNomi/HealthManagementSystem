@@ -42,7 +42,12 @@
 						<a href="tel:+92-355-67890" >
 							<span>Call Now : </span>
 							<span class="h4">823-4565-13488</span>
-							<a href="logout.php"  style="padding: 5px 10px 5px 10px; margin-left: 60px;" class="btn btn-white" >Logout</a>
+							@if (Sentinel::getUser())
+								<a href="javascript:void();" style="padding: 5px 10px 5px 10px; margin-left: 60px;" class="btn btn-white" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+								<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">@csrf</form>
+							@else
+								<a href="{{ url('/login') }}"  style="padding: 5px 10px 5px 10px; margin-left: 60px;" class="btn btn-white" >Login</a>
+							@endif
 						</a>
 					</div>
 				</div>
