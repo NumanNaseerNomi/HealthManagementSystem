@@ -90,7 +90,7 @@
 <!-- Calculated services starts HERE -->
 
 
-<section class="cta-section ">
+<!-- <section class="cta-section ">
 	<div class="container">
 		<div class="cta position-relative">
 			<div class="row">
@@ -126,7 +126,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 
 <!-- 3rd Featured services starts HERE -->
