@@ -88,10 +88,10 @@
                                         <th scope="row">{{ __('Experience:') }}</th>
                                         <td> {{ $doctor_info->experience }} </td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <th scope="row">{{ __('Fees:') }}</th>
                                         <td>{{ $doctor_info->fees }}</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -157,7 +157,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="media">
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="card">
                     <div class="card-body">
