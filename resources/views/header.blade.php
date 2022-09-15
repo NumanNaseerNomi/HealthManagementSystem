@@ -69,6 +69,9 @@
 		  <div class="collapse navbar-collapse" id="navbarmain">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item active">
+			  	<span class="nav-link" style="cursor:pointer" onclick="openNav()">&#9776;</span>
+			  </li>
+			  <li class="nav-item active">
 				<a class="nav-link" href="{{ url('/') }}">Home</a>
 			  </li>
 			  <li class="nav-item active">
