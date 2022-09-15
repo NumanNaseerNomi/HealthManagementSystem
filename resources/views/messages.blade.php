@@ -29,8 +29,7 @@
                             @foreach($messages as $message)
                                 @if($user->id == $message->from)
                                     <div class="card-body text-right">
-                                        <span class="bg-success text-white p-2 d-inline-block">
-                                            <strong>YOU:</strong> {{$message->created_at}} <br/>
+                                        <span class="bg-success text-white p-2 d-inline-block" data-toggle="tooltip" data-placement="top" title="{{$message->created_at}}">
                                             {{$message->body}}
                                         </span>
                                     </div>
