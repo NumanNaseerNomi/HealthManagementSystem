@@ -144,7 +144,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="alert(this)" onmouseout="alert(this)">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-laboratory text-lg"></i>
@@ -157,7 +157,7 @@
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-heart-beat-alt text-lg"></i>
@@ -169,7 +169,7 @@
 				</div>
 			</div>
 			
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-dna-alt-2 text-lg"></i>
@@ -182,7 +182,7 @@
 			</div>
 
 
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-crutch text-lg"></i>
@@ -195,7 +195,7 @@
 				</div>
 			</div>
 
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-pills text-lg"></i>
@@ -207,7 +207,7 @@
 				</div>
 			</div>
 			
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="toggleContent(this)" onmouseout="toggleContent(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-nurse text-lg"></i>
@@ -406,3 +406,19 @@
 	</div>
 </section>
 @include("footer")
+
+<script>
+	function toggleContent(arg)
+	{
+		let pTag = arg.querySelector('p');
+
+		if(pTag.classList.contains("d-none"))
+		{
+			pTag.classList.remove("d-none");
+		}
+		else
+		{
+			pTag.classList.add("d-none");
+		}
+	}
+</script>
