@@ -19,9 +19,6 @@ class MessagesController extends Controller
         }
         else
         {
-
-        // if($user)
-        // {
             $role = $user->roles[0]->slug;
             $patient = null;
             $patient_info = null;
@@ -55,10 +52,6 @@ class MessagesController extends Controller
 
             return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages"));
         }
-        // else
-        // {
-        //     return redirect('loginTest')->with('error','Please Login');
-        // }
     }
 
     function sendMessage(Request $request)
