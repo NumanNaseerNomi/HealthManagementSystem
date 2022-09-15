@@ -1,4 +1,5 @@
 @include("header")
+@include("sidebar")
 <!-- Slider Starts Here -->
 <section class="banner">
 	<div class="container">
