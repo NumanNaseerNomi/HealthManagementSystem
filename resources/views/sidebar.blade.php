@@ -39,7 +39,7 @@
 
     .sidenav a:hover
     {
-        color: #f1f1f1;
+        color: #e12454;
     }
 
     .sidenav .closebtn
