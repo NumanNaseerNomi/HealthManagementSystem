@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->integer('from')->comment('User ID');
             $table->integer('to')->comment('User ID');
             $table->longText('body')->comment('Text Message');
+            $table->boolean('isRead')->default(0);
             $table->timestamps();
         });
     }
