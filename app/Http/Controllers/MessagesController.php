@@ -43,14 +43,15 @@ class MessagesController extends Controller
                 if($chatUser)
                 {
                     $messages = MessagesModel::where("from", $request->id)->orWhere("to", $request->id)->get();
+                    MessagesModel::where("from", $request->id)->where("to", $user->id)->where("isRead", 0)->update(["isRead" => 1]);
                 }
                 else
                 {
                     return redirect()->back();
                 }
             }
-
-            $messagesCount = MessagesModel::where("to", $user->id)->count();
+            
+            $messagesCount = MessagesModel::where("to", $user->id)->where("isRead", 0)->count();
 
             return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages", "messagesCount"));
         }
