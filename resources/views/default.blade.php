@@ -144,7 +144,7 @@
 		</div>
 
 		<div class="row">
-			<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="col-lg-4 col-md-6 col-sm-6" onmouseover="alert(this)" onmouseout="alert(this)">
 				<div class="service-item mb-4">
 					<div class="icon d-flex align-items-center">
 						<i class="icofont-laboratory text-lg"></i>
@@ -152,7 +152,7 @@
 					</div>
 
 					<div class="content">
-						<p class="mb-4">Lab reporter check the reports and send them to the doctor.</p>
+						<p class="mb-4 d-none">Lab reporter check the reports and send them to the doctor.</p>
 					</div>
 				</div>
 			</div>
@@ -164,7 +164,7 @@
 						<h4 class="mt-3 mb-3">Cardiology</h4>
 					</div>
 					<div class="content">
-						<p class="mb-4">Cardiology departement diagnos and treats heart disease patients.</p>
+						<p class="mb-4 d-none">Cardiology departement diagnos and treats heart disease patients.</p>
 					</div>
 				</div>
 			</div>
@@ -176,7 +176,7 @@
 						<h4 class="mt-3 mb-3">Dermatology</h4>
 					</div>
 					<div class="content">
-						<p class="mb-4">Dematology diagnos and treats of diseases of the skin, hair and nails.</p>
+						<p class="mb-4 d-none">Dematology diagnos and treats of diseases of the skin, hair and nails.</p>
 					</div>
 				</div>
 			</div>
@@ -190,7 +190,7 @@
 					</div>
 
 					<div class="content">
-						<p class="mb-4">This Department treats and diagnos cancers patients.</p>
+						<p class="mb-4 d-none">This Department treats and diagnos cancers patients.</p>
 					</div>
 				</div>
 			</div>
@@ -202,7 +202,7 @@
 						<h4 class="mt-3 mb-3">Internal Medicine</h4>
 					</div>
 					<div class="content">
-						<p class="mb-4">This department treats and diagnos kidney patients.</p>
+						<p class="mb-4 d-none">This department treats and diagnos kidney patients.</p>
 					</div>
 				</div>
 			</div>
@@ -214,7 +214,7 @@
 						<h4 class="mt-3 mb-3">Women's Health</h4>
 					</div>
 					<div class="content">
-						<p class="mb-4">This department treats and diagnos all diseases related to women health.</p>
+						<p class="mb-4 d-none">This department treats and diagnos all diseases related to women health.</p>
 					</div>
 				</div>
 			</div>
