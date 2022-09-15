@@ -29,14 +29,13 @@
                             @foreach($messages as $message)
                                 @if($user->id == $message->from)
                                     <div class="card-body text-right">
-                                        <span class="bg-success text-white p-2 d-inline-block" data-toggle="tooltip" data-placement="top" title="{{$message->created_at}}">
+                                        <span class="bg-success text-white p-2 d-inline-block rounded-lg" data-toggle="tooltip" data-placement="top" title="{{$message->created_at}}">
                                             {{$message->body}}
                                         </span>
                                     </div>
                                 @else
                                     <div class="card-body">
-                                        <span class="bg-primary text-white p-2 d-inline-block">
-                                            <strong>{{$message->user->first_name}} {{$message->user->last_name}}:</strong> {{$message->created_at}} <br/> 
+                                        <span class="bg-primary text-white p-2 d-inline-block rounded-lg" data-toggle="tooltip" data-placement="top" title="{{$message->created_at}}">
                                             {{$message->body}}
                                         </span>
                                     </div>
