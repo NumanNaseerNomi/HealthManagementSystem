@@ -27,7 +27,8 @@
             </button>
         </div>
         <div class="d-flex">
-            <button type="button" class="btn header-item noti-icon">
+            <button type="button" class="btn header-item noti-icon waves-effect">
+                <span class="badge badge-pill badge-danger text-danger">.</span>
                 <a href="/iMessages" role="button"><i class="bx bx-chat text-dark"></i></a>
             </button>
             <div class="dropdown d-inline-block">
