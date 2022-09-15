@@ -50,7 +50,9 @@ class MessagesController extends Controller
                 }
             }
 
-            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages"));
+            $messagesCount = MessagesModel::where("to", $user->id)->count();
+
+            return view('messages', compact('user', 'role', 'patient', 'patient_info', 'medical_info', "chatUsers", "chatUser", "messages", "messagesCount"));
         }
     }
 
