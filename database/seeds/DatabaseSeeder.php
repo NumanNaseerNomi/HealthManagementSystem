@@ -22,12 +22,12 @@ class DatabaseSeeder extends Seeder
             DoctorSeeder::class,
             PatientSeeder::class,
             ReceptionistSeeder::class,
+            LabReporterSeeder::class,
             MedicalInfoSeeder::class,
             NotificationTypeSeeder::class,
             DoctorAvailableDaySeeder::class,
             DoctorAvailableTimeSeeder::class,
             DoctorAvailableSlotSeeder::class,
-            LabReporterSeeder::class,
         ]);
     }
 }
