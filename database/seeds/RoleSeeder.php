@@ -41,6 +41,13 @@ class RoleSeeder extends Seeder
                 'slug'       => 'patient',
             ]);
 
+        Sentinel::getRoleRepository()
+            ->createModel()
+            ->create([
+                'name'       => 'Lab Reporter',
+                'slug'       => 'labReporter',
+            ]);
+
         // admin permission add
         $role_admin = Sentinel::findRoleBySlug('admin');
         $role_admin->permissions = [
@@ -141,5 +148,15 @@ class RoleSeeder extends Seeder
 
         ];
         $role_receptionist->save();
+
+        // Lab Reporter permission add
+        $role_labReporter = Sentinel::findRoleBySlug('labReporter');
+        $role_labReporter->permissions = [
+            'doctor.list' => true,
+            'patient.list' => true,
+            'appointment.list' => true,
+            'profile.update' => true,
+        ];
+        $role_labReporter->save();
     }
 }
