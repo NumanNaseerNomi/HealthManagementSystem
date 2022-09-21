@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             DoctorAvailableDaySeeder::class,
             DoctorAvailableTimeSeeder::class,
             DoctorAvailableSlotSeeder::class,
+            LabReporterSeeder::class,
         ]);
     }
 }
