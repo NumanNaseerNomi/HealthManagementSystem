@@ -252,6 +252,10 @@ class HomeController extends Controller
             ];
             return view('index', compact('user', 'role', 'appointments', 'data'));
         }
+        elseif ($role == 'labReporter')
+        {
+            dd(1);
+        }
     }
 
     public function per_page_item(Request $request)
