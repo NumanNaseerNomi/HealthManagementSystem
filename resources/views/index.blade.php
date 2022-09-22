@@ -14,7 +14,7 @@
         @elseif ($role == 'patient')
             @include('layouts.patient-dashboard')
         @elseif ($role == "labReporter")
-            @include('layouts.admin-dashboard')
+            @include('layouts.labReporterDashboard')
         @endif
     @endsection
     @section('script')
