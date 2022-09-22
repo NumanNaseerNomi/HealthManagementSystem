@@ -254,7 +254,7 @@ class HomeController extends Controller
         }
         elseif ($role == 'labReporter')
         {
-            dd(1);
+            return view('index', compact('user', 'role', 'appointments', 'data'));
         }
     }
 
