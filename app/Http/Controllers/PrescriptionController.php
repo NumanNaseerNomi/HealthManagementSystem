@@ -70,7 +70,9 @@ class PrescriptionController extends Controller
             $role = $user->roles[0]->slug;
             $patient_role = Sentinel::findRoleBySlug('patient');
             $patients = $patient_role->users()->with('roles')->get();
-            return view('prescription.prescription-details', compact('user', 'role', 'patients'));
+            $labReporterRole = Sentinel::findRoleBySlug("labReporter");
+            $labReporters = $labReporterRole->users()->with('roles')->get();
+            return view('prescription.prescription-details', compact('user', 'role', 'patients', "labReporters"));
         } else {
             return view('error.403');
         }
