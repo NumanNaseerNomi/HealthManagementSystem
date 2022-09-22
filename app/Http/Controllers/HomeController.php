@@ -252,9 +252,14 @@ class HomeController extends Controller
             ];
             return view('index', compact('user', 'role', 'appointments', 'data'));
         }
-        elseif ($role == 'labReporter')
+        elseif ($role == "labReporter")
         {
-            return view('index', compact('user', 'role', 'appointments', 'data'));
+            $data =
+            [
+                "total_appointment" => 15
+            ];
+
+            return view("index", compact("role", "data"));
         }
     }
 
