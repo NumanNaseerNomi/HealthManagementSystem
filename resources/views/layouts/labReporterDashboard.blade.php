@@ -94,12 +94,6 @@
         </div>
 
         <!-- end row -->
-{{--        <div class="card">--}}
-{{--            <div class="card-body">--}}
-{{--                <h4 class="card-title mb-4">{{ __('Monthly Registered Users') }}</h4>--}}
-{{--                <div id="monthly_users" class="apex-charts" dir="ltr"></div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 </div>
 <!-- end row -->
