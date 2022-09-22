@@ -22,19 +22,19 @@
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#Doctors" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-md"></i></span>
-                            <span class="d-none d-sm-block">{{ __('Doctors') }}</span>
+                            <span class="d-none d-sm-block">All Reports</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#Receptionist" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-tie"></i></span>
-                            <span class="d-none d-sm-block">{{ __('Receptionist') }}</span>
+                            <span class="d-none d-sm-block">Pending Reports</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="tab" href="#Patients" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-injured"></i></span>
-                            <span class="d-none d-sm-block">{{ __('Patients') }}</span>
+                            <span class="d-none d-sm-block">Completed Reports</span>
                         </a>
                     </li>
                 </ul>
