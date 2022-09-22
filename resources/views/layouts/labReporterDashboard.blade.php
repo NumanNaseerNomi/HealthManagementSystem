@@ -13,63 +13,6 @@
 </div>
 <!-- end page title -->
 <div class="row">
-    <div class="col-xl-4">
-        <div class="card overflow-hidden">
-            <div class="bg-soft-primary">
-                <div class="row">
-                    <div class="col-7">
-                        <div class="text-primary p-3">
-                            <h5 class="text-primary">{{ __('Welcome Back !') }}</h5>
-                            <p>Admin Dashboard</p>
-                        </div>
-                    </div>
-                    <div class="col-5 align-self-end">
-                        <img src="{{ URL::asset('assets/images/profile-img.png') }}" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="avatar-md profile-user-wid mb-4">
-                            <img src="@if ($user->profile_photo != ''){{ URL::asset('storage/images/users/' . $user->profile_photo) }}@else{{ URL::asset('assets/images/users/noImage.png') }}@endif" alt="" class="img-thumbnail rounded-circle">
-                        </div>
-                        <h5 class="font-size-15 text-truncate"> {{ $user->first_name }} {{ $user->last_name }} </h5>
-                        <p class="text-muted mb-0 text-truncate">{{ __('Super Admin') }}</p>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="pt-4">
-                            <div class="row">
-                                <div class="col-6">
-                                    <a href="{{ url('/doctor') }}" class="mb-0 font-weight-medium font-size-15">
-                                        <h5 class="mb-0">{{ number_format($data['total_doctors']) }}</h5>
-                                    </a>
-                                    <p class="text-muted mb-0">{{ __('Doctors') }}</p>
-                                </div>
-                                <div class="col-6">
-                                    <a href="{{ url('/patient') }}" class="mb-0 font-weight-medium font-size-15">
-                                        <h5 class="mb-0">{{ number_format($data['total_patients']) }}</h5>
-                                    </a>
-                                    <p class="text-muted mb-0">{{ __('Patients') }}</p>
-                                </div>
-                            </div>
-                            <div class="row mt-4">
-                                <div class="col-6">
-                                    <a href="{{ url('/receptionist') }}"
-                                        class="mb-0 font-weight-medium font-size-15">
-                                        <h5 class="mb-0">{{ number_format($data['total_receptionists']) }}
-                                        </h5>
-                                    </a>
-                                    <p class="text-muted mb-0">{{ __('Receptionist') }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="col-xl-8">
         <div class="row">
             <div class="col-md-4">
@@ -89,40 +32,6 @@
                     </div>
                 </div>
             </div>
-{{--            <div class="col-md-4">--}}
-{{--                <div class="card mini-stats-wid">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="media">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <p class="text-muted font-weight-medium">{{ __('Revenue') }}</p>--}}
-{{--                                <h4 class="mb-0">${{ number_format($data['revenue'], 2) }}</h4>--}}
-{{--                            </div>--}}
-{{--                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">--}}
-{{--                                <span class="avatar-title rounded-circle bg-primary">--}}
-{{--                                    <i class="bx bx-dollar font-size-24"></i>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4">--}}
-{{--                <div class="card mini-stats-wid">--}}
-{{--                    <div class="card-body">--}}
-{{--                        <div class="media">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <p class="text-muted font-weight-medium">{{ __("Today's Earning") }}</p>--}}
-{{--                                <h4 class="mb-0">${{ number_format($data['daily_earning'], 2) }}</h4>--}}
-{{--                            </div>--}}
-{{--                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">--}}
-{{--                                <span class="avatar-title rounded-circle bg-primary">--}}
-{{--                                    <i class="bx bxs-dollar-circle  font-size-24"></i>--}}
-{{--                                </span>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
             <div class="col-md-4">
                 <div class="card mini-stats-wid">
                     <div class="card-body">
