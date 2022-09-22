@@ -13,6 +13,8 @@
             @include('layouts.receptionist-dashboard')
         @elseif ($role == 'patient')
             @include('layouts.patient-dashboard')
+        @elseif ($role == "labReporter")
+            @include('layouts.patient-dashboard')
         @endif
     @endsection
     @section('script')
