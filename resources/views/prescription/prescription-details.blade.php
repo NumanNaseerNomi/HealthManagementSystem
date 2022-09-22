@@ -135,11 +135,10 @@
                                                     value="Add Test Report" />
                                             </div>
                                             <label class="control-label">Lab Reporter<span class="text-danger">*</span></label>
-                                            <select class="form-control select2" name="labReporter_id" id="labReporter">
+                                            <select class="form-control select2" name="labReporterId" id="labReporter">
                                                 <option disabled selected>Select Lab Reporter</option>
                                                 @foreach ($labReporters as $labReporter)
-                                                    <option value="{{ $labReporter->id }}" @if (old('labReporter_id') == $labReporter->id) selected @endif>
-                                                        {{ $labReporter->first_name }} {{ $labReporter->last_name }}</option>
+                                                    <option value="{{ $labReporter->id }}">{{ $labReporter->first_name }} {{ $labReporter->last_name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
