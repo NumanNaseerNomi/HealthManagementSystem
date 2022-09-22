@@ -13,87 +13,83 @@
 </div>
 <!-- end page title -->
 <div class="row">
-    <div class="col-xl-8">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">{{ __('Appointments') }}</p>
-                                <h4 class="mb-0">{{ number_format($data['total_appointment']) }}</h4>
-                            </div>
-                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                <span class="avatar-title">
-                                    <i class="bx bxs-calendar-check font-size-24"></i>
-                                </span>
-                            </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mini-stats-wid">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <p class="text-muted font-weight-medium">{{ __('Appointments') }}</p>
+                            <h4 class="mb-0">{{ number_format($data['total_appointment']) }}</h4>
+                        </div>
+                        <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                            <span class="avatar-title">
+                                <i class="bx bxs-calendar-check font-size-24"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">{{ __("Today's Appointments") }}</p>
-                                <a href="{{ url('/today-appointment') }}"
-                                    class="mb-0 font-weight-medium font-size-24">
-                                    <h4 class="mb-0">{{ number_format($data['today_appointment']) }}</h4>
-                                </a>
-                            </div>
-                            <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
-                                <span class="avatar-title">
-                                    <i class="bx bx-calendar font-size-24"></i>
-                                </span>
-                            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mini-stats-wid">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <p class="text-muted font-weight-medium">{{ __("Today's Appointments") }}</p>
+                            <a href="{{ url('/today-appointment') }}"
+                                class="mb-0 font-weight-medium font-size-24">
+                                <h4 class="mb-0">{{ number_format($data['today_appointment']) }}</h4>
+                            </a>
+                        </div>
+                        <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
+                            <span class="avatar-title">
+                                <i class="bx bx-calendar font-size-24"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">{{ __('Tomorrow Appointments') }}</p>
-                                <h4 class="mb-0">{{ number_format($data['tomorrow_appointment']) }}</h4>
-                            </div>
-                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                                <span class="avatar-title rounded-circle bg-primary">
-                                    <i class="bx bx-calendar-event font-size-24"></i>
-                                </span>
-                            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mini-stats-wid">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <p class="text-muted font-weight-medium">{{ __('Tomorrow Appointments') }}</p>
+                            <h4 class="mb-0">{{ number_format($data['tomorrow_appointment']) }}</h4>
+                        </div>
+                        <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-primary">
+                                <i class="bx bx-calendar-event font-size-24"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card mini-stats-wid">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-body">
-                                <p class="text-muted font-weight-medium">{{ __('Upcoming Appointments') }}</p>
-                                <a href="{{ url('/upcoming-appointment') }}"
-                                    class="mb-0 font-weight-medium font-size-24">
-                                    <h4 class="mb-0">{{ number_format($data['Upcoming_appointment']) }}
-                                    </h4>
-                                </a>
-                            </div>
-                            <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
-                                <span class="avatar-title rounded-circle bg-primary">
-                                    <i class='bx bxs-calendar-minus font-size-24'></i>
-                                </span>
-                            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mini-stats-wid">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="media-body">
+                            <p class="text-muted font-weight-medium">{{ __('Upcoming Appointments') }}</p>
+                            <a href="{{ url('/upcoming-appointment') }}"
+                                class="mb-0 font-weight-medium font-size-24">
+                                <h4 class="mb-0">{{ number_format($data['Upcoming_appointment']) }}
+                                </h4>
+                            </a>
+                        </div>
+                        <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">
+                            <span class="avatar-title rounded-circle bg-primary">
+                                <i class='bx bxs-calendar-minus font-size-24'></i>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- end row -->
     </div>
 </div>
 <!-- end row -->
