@@ -254,7 +254,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">{{ __('Latest Users') }}</h4>
+                <h4 class="card-title mb-4">Reports</h4>
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                     <li class="nav-item">
