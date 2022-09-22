@@ -68,62 +68,6 @@
                 </div>
             </div>
         </div>
-{{--        <div class="card">--}}
-{{--            <div class="card-body">--}}
-{{--                <h4 class="card-title mb-4">{{ __('Monthly Earning') }}</h4>--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-sm-6">--}}
-{{--                        <p class="text-muted">{{ __('This month') }}</p>--}}
-{{--                        <h3>${{ number_format($data['monthly_earning']) }}</h3>--}}
-{{--                        <p class="text-muted">--}}
-{{--                            <span class="@if ($data['monthly_diff'] > 0) text-success @else text-danger @endif mr-2">--}}
-{{--                                {{ $data['monthly_diff'] }}% <i class="mdi @if ($data['monthly_diff'] > 0) mdi-arrow-up @else mdi-arrow-down @endif"></i>--}}
-{{--                            </span>{{ __('From previous month') }}--}}
-{{--                        </p>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-sm-6">--}}
-{{--                        <div id="radialBar-chart" class="apex-charts"></div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="col-xl-8">--}}
-{{--            <div class="card mini-stats-wid">--}}
-{{--                <div class="card-body">--}}
-{{--                    <div class="media">--}}
-{{--                        @if (session()->has('page_limit'))--}}
-{{--                            @php--}}
-{{--                                $per_page = session()->get('page_limit');--}}
-{{--                            @endphp--}}
-{{--                        @else--}}
-{{--                            @php--}}
-{{--                                $per_page = Config::get('app.page_limit');--}}
-{{--                            @endphp--}}
-{{--                        @endif--}}
-{{--                        <div class="media-body">--}}
-{{--                            <p class="text-muted font-weight-medium">Display items per page</p>--}}
-{{--                            <button--}}
-{{--                                class="btn  {{ $per_page == 10 ? 'btn-primary' : 'btn-info' }}  btn-sm mr-2 per-page-items  mb-md-1"--}}
-{{--                                data-page="10">10</button>--}}
-{{--                            <button--}}
-{{--                                class="btn  {{ $per_page == 25 ? 'btn-primary' : 'btn-info' }}  btn-sm mr-2 per-page-items  mb-md-1"--}}
-{{--                                data-page="25">25</button>--}}
-{{--                            <button--}}
-{{--                                class="btn  {{ $per_page == 50 ? 'btn-primary' : 'btn-info' }}  btn-sm mr-2 per-page-items  mb-md-1"--}}
-{{--                                data-page="50">50</button>--}}
-{{--                            <button--}}
-{{--                                class="btn  {{ $per_page == 100 ? 'btn-primary' : 'btn-info' }}  btn-sm mr-2 per-page-items  mb-md-1"--}}
-{{--                                data-page="100">100</button>--}}
-{{--                        </div>--}}
-{{--                        <div class="avatar-sm rounded-circle bg-primary align-self-center mini-stat-icon">--}}
-{{--                            <span class="avatar-title rounded-circle bg-primary">--}}
-{{--                                <i class="bx bx-book-open font-size-24"></i>--}}
-{{--                            </span>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
     </div>
 
     <div class="col-xl-8">
