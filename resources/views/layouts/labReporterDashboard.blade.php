@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#Patients" role="tab">
+                        <a class="nav-link" data-toggle="tab" href="#completedTestReports" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-injured"></i></span>
                             <span class="d-none d-sm-block">Completed Reports</span>
                         </a>
@@ -93,13 +93,18 @@
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModalLabel">Report Results</h5>
                                                                 </div>
-                                                                <div class="modal-body">
-                                                                    ...
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                                </div>
+                                                                <form action="/test">
+                                                                    @csrf
+                                                                    <div class="modal-body">
+                                                                        <div class="form-group">
+                                                                            <textarea class="form-control" rows="10" name="result"></textarea>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -112,7 +117,7 @@
                         </div>
                         <!-- end table-responsive -->
                     </div>
-                    <div class="tab-pane" id="Patients" role="tabpanel">
+                    <div class="tab-pane" id="completedTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
                                 <thead class="thead-light">
@@ -124,12 +129,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($allTestReports as $testReport)
+                                    @foreach ($completedTestReports as $report)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $testReport->name }}</td>
-                                            <td>{{ $testReport->note }}</td>
-                                            <td>{{ $testReport->result }}</td>
+                                            <td>{{ $report->name }}</td>
+                                            <td>{{ $report->note }}</td>
+                                            <td>{{ $report->result }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
