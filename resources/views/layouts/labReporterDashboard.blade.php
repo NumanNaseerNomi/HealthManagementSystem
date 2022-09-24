@@ -20,7 +20,7 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#Doctors" role="tab">
+                        <a class="nav-link active" data-toggle="tab" href="#allTestReports" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-md"></i></span>
                             <span class="d-none d-sm-block">All Reports</span>
                         </a>
@@ -40,30 +40,30 @@
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content p-3 text-muted">
-                    <div class="tab-pane active" id="Doctors" role="tabpanel">
+                    <div class="tab-pane active" id="allTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
                                 <thead class="thead-light">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
-                                        <th>{{ __('Degree') }}</th>
-                                        <th>{{ __('Contact No') }}</th>
-                                        <th>{{ __('Email') }}</th>
-                                        <th>{{ __('View Details') }}</th>
+                                        <th>Note</th>
+                                        <th>Results</th>
+                                        <!-- <th>{{ __('Email') }}</th>
+                                        <th>{{ __('View Details') }}</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($doctors as $item)
+                                    @foreach ($allTestReports as $testReport)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $item->first_name }} {{ $item->last_name }}</td>
-                                            <td>{{ $item->doctor->degree }}</td>
-                                            <td>{{ $item->mobile }}</td>
-                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $testReport->name }}</td>
+                                            <td>{{ $testReport->note }}</td>
+                                            <td>{{ $testReport->result }}</td>
+                                            <!-- <td>{{ $testReport->email }}</td> -->
                                             <td>
                                                 <!-- Button trigger modal -->
-                                                <a href="{{ url('doctor/' . $item->id) }}">
+                                                <a href="{{ url('doctor/' . $testReport->id) }}">
                                                     <button type="button"
                                                         class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
                                                         {{ __('View Details') }}
