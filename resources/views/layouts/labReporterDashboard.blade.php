@@ -59,16 +59,18 @@
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $testReport->name }}</td>
                                             <td>{{ $testReport->note }}</td>
-                                            <td>{{ $testReport->result }}</td>
+                                            <td>
+                                                @if($testReport->result)
+                                                    {{ $testReport->result }}</td>
+                                                @else
+                                                    <a href="{{ url('doctor/' . $testReport->id) }}">
+                                                        <button type="button" class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">Add Results</button>
+                                                    </a>
+                                                @endif
                                             <!-- <td>{{ $testReport->email }}</td> -->
                                             <td>
                                                 <!-- Button trigger modal -->
-                                                <a href="{{ url('doctor/' . $testReport->id) }}">
-                                                    <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
-                                                        {{ __('View Details') }}
-                                                    </button>
-                                                </a>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach
