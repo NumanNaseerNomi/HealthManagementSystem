@@ -26,7 +26,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#Receptionist" role="tab">
+                        <a class="nav-link" data-toggle="tab" href="#pendingTestReports" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-user-tie"></i></span>
                             <span class="d-none d-sm-block">Pending Reports</span>
                         </a>
@@ -57,29 +57,7 @@
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $testReport->name }}</td>
                                             <td>{{ $testReport->note }}</td>
-                                            <td>
-                                                @if($testReport->result)
-                                                    {{ $testReport->result }}
-                                                @else
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Results</button>
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Report Results</h5>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    ...
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            </td>
+                                            <td>{{ $testReport->result }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -87,7 +65,7 @@
                         </div>
                         <!-- end table-responsive -->
                     </div>
-                    <div class="tab-pane" id="Receptionist" role="tabpanel">
+                    <div class="tab-pane" id="pendingTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
                                 <thead class="thead-light">
@@ -141,28 +119,17 @@
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
-                                        <th>{{ __('Contact No') }}</th>
-                                        <th>{{ __('Email') }}</th>
-                                        <th>{{ __('View Details') }}</th>
+                                        <th>Note</th>
+                                        <th>Results</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($patients as $patient)
+                                    @foreach ($allTestReports as $testReport)
                                         <tr>
-                                            <td> {{ $loop->index + 1 }} </td>
-                                            <td> {{ $patient->first_name }} {{ $patient->last_name }} </td>
-                                            <td> {{ $patient->mobile }} </td>
-                                            <td> {{ $patient->email }} </td>
-                                            <td>
-                                                <!-- Button trigger modal -->
-                                                <a href="{{ url('patient/' . $patient->id) }}">
-                                                    <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                        data-toggle="modal" data-target=".exampleModal">
-                                                        {{ __('View Details') }}
-                                                    </button>
-                                                </a>
-                                            </td>
+                                            <td>{{ $loop->index + 1 }}</td>
+                                            <td>{{ $testReport->name }}</td>
+                                            <td>{{ $testReport->note }}</td>
+                                            <td>{{ $testReport->result }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
