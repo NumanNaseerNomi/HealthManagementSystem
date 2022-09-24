@@ -11,5 +11,6 @@ class TestReportController extends Controller
     {
         // dd($request->result);
         TestReport::where("id", 1)->update(["result" => $request->result]);
+        return back();
     }
 }
