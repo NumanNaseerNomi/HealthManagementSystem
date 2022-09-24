@@ -16,11 +16,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href=" {{ route('patient.create') }} ">
-                            <button type="button" class="btn btn-success waves-effect waves-light mb-4">
-                                <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Patient') }}
-                            </button>
-                        </a>
+                        @if ($role != 'labReporter')
+                            <a href=" {{ route('patient.create') }} ">
+                                <button type="button" class="btn btn-success waves-effect waves-light mb-4">
+                                    <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Patient') }}
+                                </button>
+                            </a>
+                        @endif
                         <table class="table table-striped dt-responsive nowrap">
                             <thead class="bg-success text-dark">
                                 <tr>
