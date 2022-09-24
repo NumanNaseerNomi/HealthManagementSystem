@@ -13,6 +13,7 @@ use App\ReceptionListDoctor;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Stripe\Card;
+use App\TestReport;
 
 class HomeController extends Controller
 {
@@ -254,6 +255,11 @@ class HomeController extends Controller
         }
         elseif ($role == "labReporter")
         {
+            $testReports = TestReport::where("labReporterId", $user->id);
+            $allTestReports = $testReports->get();
+            $pendingTestReports = $testReports->where("result", null)->get();
+            $completedTestReports = $testReports->where("result", "!=", null)->get();
+            // dd($allTestReports, $pendingTestReports, $completedTestReports);
             $patient_role = Sentinel::findRoleBySlug('patient');
             $patients = $patient_role->users()->with('roles')->orderBy('id', 'DESC')->where('is_deleted', 0)->limit(5)->get();
             $doctor_role = Sentinel::findRoleBySlug('doctor');
