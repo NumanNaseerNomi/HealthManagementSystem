@@ -114,7 +114,6 @@
                                                         <textarea type="text" name="notes" class="form-control" rows="3" placeholder="{{ __('Notes...') }}"></textarea>
                                                     </div>
                                                 </div>
-                                                <input data-repeater-create type="button" class="btn btn-success" value="Add Medicine" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -131,8 +130,6 @@
                                                         <textarea type="text" name="notes" class="form-control" rows="3" placeholder="{{ __('Notes...') }}"></textarea>
                                                     </div>
                                                 </div>
-                                                <input data-repeater-create type="button" class="btn btn-success"
-                                                    value="Add Test Report" />
                                             </div>
                                             <label class="control-label">Lab Reporter<span class="text-danger">*</span></label>
                                             <select class="form-control select2" name="labReporterId" id="labReporter">
