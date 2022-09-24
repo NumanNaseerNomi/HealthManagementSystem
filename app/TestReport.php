@@ -13,5 +13,7 @@ class TestReport extends Model
         'name',
         'notes',
         'is_deleted',
+        "labReporterId",
+        "result",
     ];
 }
