@@ -255,10 +255,9 @@ class HomeController extends Controller
         }
         elseif ($role == "labReporter")
         {
-            $testReports = TestReport::where("labReporterId", $user->id);
-            $allTestReports = $testReports->get();
-            $pendingTestReports = $testReports->where("result", null)->get();
-            $completedTestReports = $testReports->where("result", "!=", null)->get();
+            $allTestReports = TestReport::where("labReporterId", $user->id)->get();
+            $pendingTestReports = TestReport::where("labReporterId", $user->id)->where("result", null)->get();
+            $completedTestReports = TestReport::where("labReporterId", $user->id)->whereNotNull("result")->get();
             // dd($allTestReports, $pendingTestReports, $completedTestReports);
             $patient_role = Sentinel::findRoleBySlug('patient');
             $patients = $patient_role->users()->with('roles')->orderBy('id', 'DESC')->where('is_deleted', 0)->limit(5)->get();
