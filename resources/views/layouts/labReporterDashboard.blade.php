@@ -56,7 +56,7 @@
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $report->name }}</td>
-                                            <td>{{ $report->note }}</td>
+                                            <td>{{ $report->notes }}</td>
                                             <td>{{ $report->result }}</td>
                                         </tr>
                                     @endforeach
@@ -81,7 +81,7 @@
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $report->name }}</td>
-                                            <td>{{ $report->note }}</td>
+                                            <td>{{ $report->notes }}</td>
                                             <td>
                                                 @if($report->result)
                                                     {{ $report->result }}
@@ -134,7 +134,7 @@
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
                                             <td>{{ $report->name }}</td>
-                                            <td>{{ $report->note }}</td>
+                                            <td>{{ $report->notes }}</td>
                                             <td>{{ $report->result }}</td>
                                         </tr>
                                     @endforeach
