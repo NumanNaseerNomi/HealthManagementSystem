@@ -185,6 +185,17 @@
                                 <i class='bx bx-list-plus mr-2'></i>{{ __('Appointment List') }}
                             </a>
                         </li>
+                    @elseif ($role == 'labReporter')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('doctor') }}">
+                                <i class="bx bx-user-circle mr-2"></i>{{ __('Doctors') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('patient') }}">
+                                <i class="bx bx-user-circle mr-2"></i>{{ __('Patient') }}
+                            </a>
+                        </li>
                     @endif
                 </ul>
             </div>
