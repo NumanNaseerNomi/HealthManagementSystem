@@ -52,12 +52,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($allTestReports as $testReport)
+                                    @foreach ($allTestReports as $report)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $testReport->name }}</td>
-                                            <td>{{ $testReport->note }}</td>
-                                            <td>{{ $testReport->result }}</td>
+                                            <td>{{ $report->name }}</td>
+                                            <td>{{ $report->note }}</td>
+                                            <td>{{ $report->result }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -77,21 +77,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pendingTestReports as $pendingTestReport)
+                                    @foreach ($pendingTestReports as $report)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $pendingTestReport->name }}</td>
-                                            <td>{{ $pendingTestReport->note }}</td>
+                                            <td>{{ $report->name }}</td>
+                                            <td>{{ $report->note }}</td>
                                             <td>
-                                                @if($pendingTestReport->result)
-                                                    {{ $pendingTestReport->result }}
+                                                @if($report->result)
+                                                    {{ $report->result }}
                                                 @else
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Results</button>
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $report->id }}">Add Results</button>
+                                                    <div class="modal fade" id="exampleModal{{ $report->id }}" tabindex="-1" aria-labelledby="exampleModal{{ $report->id }}Label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Report Results</h5>
+                                                                    <h5 class="modal-title" id="exampleModal{{ $report->id }}Label">Report Results</h5>
                                                                 </div>
                                                                 <form action="{{ url('/updateTestReport') }}" method="post">
                                                                     @csrf
