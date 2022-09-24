@@ -30,7 +30,9 @@
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Contact No') }}</th>
                                     <th>{{ __('Email') }}</th>
-                                    <th>{{ __('Option') }}</th>
+                                    @if ($role != 'labReporter')
+                                        <th>{{ __('Option') }}</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,33 +51,41 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                        <td><a href="{{ url('patient/' . $patient->id) }}" class="text-success">{{ $patient->first_name . " " . $patient->last_name }}</a></td>
+                                        <td>
+                                            @if ($role != 'labReporter')
+                                                <a href="{{ url('patient/' . $patient->id) }}" class="text-success">{{ $patient->first_name . " " . $patient->last_name }}</a>
+                                            @else
+                                                {{ $patient->first_name . " " . $patient->last_name }}
+                                            @endif
+                                        </td>
                                         <td>{{ $patient->mobile }}</td>
                                         <td>{{ $patient->email }}</td>
-                                        <td>
-                                            <a href="{{ url('patient/' . $patient->id) }}">
-                                                <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
-                                                    title="View Profile">
-                                                    <i class="mdi mdi-eye"></i>
-                                                </button>
-                                            </a>
-                                            <a href="{{ url('patient/' . $patient->id . '/edit') }}">
-                                                <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
-                                                    title="Update Profile">
-                                                    <i class="mdi mdi-lead-pencil"></i>
-                                                </button>
-                                            </a>
-                                            <a href=" javascript:void(0)">
-                                                <button type="button"
-                                                    class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
-                                                    title="Deactivate Profile" data-id="{{ $patient->id }}"
-                                                    id="delete-patient">
-                                                    <i class="mdi mdi-trash-can"></i>
-                                                </button>
-                                            </a>
-                                        </td>
+                                        @if ($role != 'labReporter')
+                                            <td>
+                                                <a href="{{ url('patient/' . $patient->id) }}">
+                                                    <button type="button"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        title="View Profile">
+                                                        <i class="mdi mdi-eye"></i>
+                                                    </button>
+                                                </a>
+                                                <a href="{{ url('patient/' . $patient->id . '/edit') }}">
+                                                    <button type="button"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        title="Update Profile">
+                                                        <i class="mdi mdi-lead-pencil"></i>
+                                                    </button>
+                                                </a>
+                                                <a href=" javascript:void(0)">
+                                                    <button type="button"
+                                                        class="btn btn-success btn-sm btn-rounded waves-effect waves-light mb-2 mb-md-0"
+                                                        title="Deactivate Profile" data-id="{{ $patient->id }}"
+                                                        id="delete-patient">
+                                                        <i class="mdi mdi-trash-can"></i>
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        @endif
                                     </tr>
                                 @endforeach
                             </tbody>
