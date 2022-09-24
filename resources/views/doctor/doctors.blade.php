@@ -17,7 +17,7 @@
                 <div></div>
                 <div class="card">
                     <div class="card-body">
-                        @if ($role != 'patient' && $role != 'receptionist')
+                        @if ($role != 'patient' && $role != 'receptionist' && $role != 'labReporter')
                             <a href=" {{ route('doctor.create') }} ">
                                 <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
                                     <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Doctor') }}
@@ -32,7 +32,7 @@
                                     <th>{{ __('Name') }}</th>
                                     <th>{{ __('Contact No') }}</th>
                                     <th>{{ __('Email') }}</th>
-                                    @if ($role != 'patient')
+                                    @if ($role != 'patient' && $role != 'labReporter')
                                         <th>{{ __('Option') }}</th>
                                     @endif
                                 </tr>
@@ -59,7 +59,7 @@
                                         <td> {{ $item->first_name }} {{ $item->last_name }} </td>
                                         <td> {{ $item->mobile }} </td>
                                         <td> {{ $item->email }} </td>
-                                        @if ($role != 'patient')
+                                        @if ($role != 'patient' && $role != 'labReporter')
                                             <td>
                                                 @if ($role == 'admin')
                                                     <a href="{{ url('doctor/' . $item->id) }}">
