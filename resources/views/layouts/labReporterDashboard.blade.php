@@ -59,7 +59,7 @@
                                             <td>{{ $testReport->note }}</td>
                                             <td>
                                                 @if($testReport->result)
-                                                    {{ $testReport->result }}</td>
+                                                    {{ $testReport->result }}
                                                 @else
                                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Results</button>
                                                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,28 +94,38 @@
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
-                                        <th>{{ __('Contact No') }}</th>
-                                        <th>{{ __('Email') }}</th>
-                                        <th>{{ __('View Details') }}</th>
+                                        <th>Note</th>
+                                        <th>Results</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($receptionists as $receptionist)
+                                    @foreach ($pendingTestReports as $pendingTestReport)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $receptionist->first_name }} {{ $receptionist->last_name }}
-                                            </td>
-                                            <td>{{ $receptionist->mobile }}</td>
-                                            <td>{{ $receptionist->email }}</td>
+                                            <td>{{ $pendingTestReport->name }}</td>
+                                            <td>{{ $pendingTestReport->note }}</td>
                                             <td>
-                                                <!-- Button trigger modal -->
-                                                <a href="{{ url('receptionist/' . $receptionist->id) }}">
-                                                    <button type="button"
-                                                        class="btn btn-primary btn-sm btn-rounded waves-effect waves-light"
-                                                        data-toggle="modal" data-target=".exampleModal">
-                                                        {{ __('View Details') }}
-                                                    </button>
-                                                </a>
+                                                @if($pendingTestReport->result)
+                                                    {{ $pendingTestReport->result }}
+                                                @else
+                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Results</button>
+                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Report Results</h5>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    ...
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
