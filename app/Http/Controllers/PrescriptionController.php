@@ -86,6 +86,7 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $user = Sentinel::getUser();
         if ($user->hasAccess('prescription.create')) {
             $request->validate([
@@ -113,12 +114,13 @@ class PrescriptionController extends Controller
                         $this->medicine->notes = $item['notes'];
                         $this->medicine->save();
                     }
-                    if ($request->test_reports[0]['test_report'] != null && $request->test_reports[0]['notes'] != null) {
+                    if ($request->test_reports[0]['test_report'] != null && $request->test_reports[0]['notes'] != null && $request->labReporterId != null) {
                         foreach ($request->test_reports as $item) {
                             $this->test_report = new TestReport();
                             $this->test_report->prescription_id = $this->prescription->id;
                             $this->test_report->name = $item['test_report'];
                             $this->test_report->notes = $item['notes'];
+                            $this->test_report->labReporterId = $request->labReporterId;
                             $this->test_report->save();
                         }
                     }
