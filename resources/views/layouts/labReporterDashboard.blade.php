@@ -43,7 +43,7 @@
                     <div class="tab-pane active" id="allTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
-                                <thead class="thead-light">
+                                <thead class="bg-success text-dark">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
@@ -68,7 +68,7 @@
                     <div class="tab-pane" id="pendingTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
-                                <thead class="thead-light">
+                                <thead class="bg-success text-dark">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
@@ -86,7 +86,7 @@
                                                 @if($report->result)
                                                     {{ $report->result }}
                                                 @else
-                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $report->id }}">Add Results</button>
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal{{ $report->id }}">Add Results</button>
                                                     <div class="modal fade" id="exampleModal{{ $report->id }}" tabindex="-1" aria-labelledby="exampleModal{{ $report->id }}Label" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
@@ -121,7 +121,7 @@
                     <div class="tab-pane" id="completedTestReports" role="tabpanel">
                         <div class="table-responsive">
                             <table class="table table-centered table-nowrap mb-0">
-                                <thead class="thead-light">
+                                <thead class="bg-success text-dark">
                                     <tr>
                                         <th>{{ __('Sr.No.') }}</th>
                                         <th>{{ __('Name') }}</th>
