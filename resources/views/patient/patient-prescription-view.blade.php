@@ -114,6 +114,7 @@
                                                 <th style="width: 70px;">{{ __('No.') }}</th>
                                                 <th>{{ __('Name') }}</th>
                                                 <th>{{ __('Notes') }}</th>
+                                                <th>Results</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -122,6 +123,7 @@
                                                     <td>{{ $loop->index + 1 }}</td>
                                                     <td> {{ $item->name }} </td>
                                                     <td> {{ $item->notes }} </td>
+                                                    <td> {{ $item->result }} </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
