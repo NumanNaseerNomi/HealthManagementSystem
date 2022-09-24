@@ -95,6 +95,7 @@
                                                                 </div>
                                                                 <form action="{{ url('/updateTestReport') }}" method="post">
                                                                     @csrf
+                                                                    <input type="hidden" name="id" value="{{ $report->id }}">
                                                                     <div class="modal-body">
                                                                         <div class="form-group">
                                                                             <textarea class="form-control" rows="10" name="result" required></textarea>
