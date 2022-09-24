@@ -258,57 +258,8 @@ class HomeController extends Controller
             $allTestReports = TestReport::where("labReporterId", $user->id)->get();
             $pendingTestReports = TestReport::where("labReporterId", $user->id)->where("result", null)->get();
             $completedTestReports = TestReport::where("labReporterId", $user->id)->whereNotNull("result")->get();
-            // dd($allTestReports, $pendingTestReports, $completedTestReports);
-            $patient_role = Sentinel::findRoleBySlug('patient');
-            $patients = $patient_role->users()->with('roles')->orderBy('id', 'DESC')->where('is_deleted', 0)->limit(5)->get();
-            $doctor_role = Sentinel::findRoleBySlug('doctor');
-            $doctors = $doctor_role->users()->with(['doctor'])->where('is_deleted', 0)->orderBy('id', 'DESC')->limit(5)->get();
-            $receptionist_role = Sentinel::findRoleBySlug('receptionist');
-            $receptionists = $receptionist_role->users()->with('roles')->orderBy('id', 'DESC')->where('is_deleted', 0)->limit(5)->get();
-            $tot_patient = $patient_role->users()->with('roles')->get();
-            $doctor_role = Sentinel::findRoleBySlug('doctor');
-            $tot_doctor = $doctor_role->users()->with('roles')->get();
-            $tot_receptionist = $receptionist_role->users()->with('roles')->get();
-            $appointments = Appointment::all();
-            $revenue = InvoiceDetail::where('is_deleted',0)->sum('amount');
 
-            $invoice = Invoice::withCount(['invoice_detail as total' => function ($re) {
-                $re->where('is_deleted',0);
-                $re->select(DB::raw('SUM(amount)'));
-            }])->whereDate('created_at', Carbon::today())->pluck('id');
-            // return $invoice;
-            $daily_earning = InvoiceDetail::whereIn('invoice_id', $invoice)->where('is_deleted',0)->sum('amount');
-            // return $daily_earning;
-            $monthlyEarning = ReportController::getMonthlyEarning();
-            $today_appointment = Appointment::with('timeSlot')->where('appointment_date', $today)->get();
-            $tomorrow_appointment = Appointment::where('appointment_date', '=', Carbon::tomorrow())->get();
-
-            $Upcoming_appointment = Appointment::where('appointment_date', '>', $today)->orWhere(function ($re) use ($today, $time) {
-                $re->whereDate('appointment_date', $today);
-                $re->whereTime('available_time', '>=', $time);
-            })
-                ->get();
-            $data = [
-                'total_doctors' => $tot_doctor->count(),
-                'total_receptionists' => $tot_receptionist->count(),
-                'total_patients' => $tot_patient->count(),
-                'total_appointment' => $appointments->count(),
-                'revenue' => $revenue,
-                'today_appointment' => $today_appointment->count(),
-                'tomorrow_appointment' => $tomorrow_appointment->count(),
-                'Upcoming_appointment' => $Upcoming_appointment->count(),
-                'daily_earning' => $daily_earning,
-                'monthly_earning' => $monthlyEarning['monthlyEarning'],
-                'monthly_diff' => $monthlyEarning['diff']
-            ];
-            return view("index", compact("user", "role", "allTestReports", "pendingTestReports", "completedTestReports", 'patients', 'doctors', 'receptionists', 'data'));
-
-            // $data =
-            // [
-            //     "total_appointment" => 15
-            // ];
-
-            // return view("index", compact("role", "data"));
+            return view("index", compact("user", "role", "allTestReports", "pendingTestReports", "completedTestReports"));
         }
     }
 
