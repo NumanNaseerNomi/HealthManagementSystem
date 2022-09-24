@@ -117,4 +117,5 @@ Route::resource('payment-key','PaymentApiController');
 Route::get('iMessages', 'MessagesController@chats');
 Route::post('sendMessage', 'MessagesController@sendMessage');
 
+Route::post('updateTestReport', 'TestReportController@update');
 });
