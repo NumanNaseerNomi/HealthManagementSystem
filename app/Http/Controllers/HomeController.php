@@ -302,7 +302,7 @@ class HomeController extends Controller
                 'monthly_earning' => $monthlyEarning['monthlyEarning'],
                 'monthly_diff' => $monthlyEarning['diff']
             ];
-            return view("index", compact("user", 'role', 'patients', 'doctors', 'receptionists', 'data'));
+            return view("index", compact("user", "role", "allTestReports", "pendingTestReports", "completedTestReports", 'patients', 'doctors', 'receptionists', 'data'));
 
             // $data =
             // [
