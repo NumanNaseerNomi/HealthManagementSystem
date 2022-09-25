@@ -50,8 +50,8 @@ class LabReporterController extends Controller
         $user = Sentinel::getUser();
         if ($user->hasAccess('patient.list')) {
             $role = $user->roles[0]->slug;
-            $patient_role = Sentinel::findRoleBySlug('labReporter');
-            $patients = $patient_role->users()->with('roles')->where('is_deleted', 0)->orderByDesc('id')->paginate($this->limit);
+            $user_role = Sentinel::findRoleBySlug('labReporter');
+            $patients = $user_role->users()->with('roles')->where('is_deleted', 0)->orderByDesc('id')->paginate($this->limit);
             return view('labReporter.labReporters', compact('user', 'role', 'patients'));
         } else {
              return view('error.403');
@@ -148,17 +148,18 @@ class LabReporterController extends Controller
      */
     public function show(User $patient)
     {
+        dd($patient->id);
         $user = Sentinel::getUser();
         if ($user->hasAccess('patient.view')) {
             $role = $user->roles[0]->slug;
             $patient = $user::whereHas('roles',function($rq){
-                $rq->where('slug','patient');
+                $rq->where('slug','labReporter');
             })->where('id', $patient->id)->where('is_deleted', 0)->first();
             if ($patient) {
                 $patient_info = Patient::where('user_id', '=', $patient->id)->first();
                 if ($patient_info) {
                     $medical_Info = MedicalInfo::where('user_id', '=', $patient->id)->first();
-                    $patient_role = Sentinel::findRoleBySlug('patient');
+                    $patient_role = Sentinel::findRoleBySlug('labReporter');
                     $patients = $patient_role->users()->with('roles')->get();
                     $appointments = Appointment::with('doctor')->where('appointment_for', $patient->id)->orderBy('id', 'desc')->paginate($this->limit, '*', 'appointment');
                     $prescriptions = Prescription::with('doctor')->where('patient_id', $patient->id)->orderBy('id', 'desc')->paginate($this->limit, '*', 'prescriptions');
