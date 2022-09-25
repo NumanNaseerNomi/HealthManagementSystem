@@ -45,6 +45,7 @@ Route::get('profile-view', 'UserController@profile_view');
 Route::resource('user', 'UserController');
 Route::resource('doctor', 'DoctorController');
 Route::resource('patient', 'PatientController');
+Route::resource('labReporter', 'LabReporterController');
 Route::resource('receptionist', 'ReceptionistController');
 Route::resource('appointment', 'AppointmentController');
 Route::resource('prescription', 'PrescriptionController');
