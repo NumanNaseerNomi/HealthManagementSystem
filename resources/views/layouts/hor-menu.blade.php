@@ -47,6 +47,18 @@
                                     class="dropdown-item">{{ __('Add New Receptionist') }}</a>
                             </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-user-circle mr-2"></i>Lab Reporters<div class="arrow-down"></div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
+                                <a href="{{ url('labReporter') }}"
+                                    class="dropdown-item">List of Lab Reporters</a>
+                                <a href="{{ route('patient.create') }}"
+                                    class="dropdown-item">Add New Lab Reporters</a>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('pending-appointment') }}">
                                 <i class='bx bx-list-plus mr-2'></i>{{ __('Appointment List') }}
