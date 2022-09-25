@@ -55,7 +55,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
                                 <a href="{{ url('labReporter') }}"
                                     class="dropdown-item">List of Lab Reporters</a>
-                                <a href="{{ route('patient.create') }}"
+                                <a href="{{ route('labReporter.create') }}"
                                     class="dropdown-item">Add New Lab Reporters</a>
                             </div>
                         </li>
