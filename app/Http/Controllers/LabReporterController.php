@@ -84,6 +84,7 @@ class LabReporterController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $user = Sentinel::getUser();
         if ($user->hasAccess('patient.create')) {
             $validatedData = $request->validate([
@@ -91,17 +92,6 @@ class LabReporterController extends Controller
                 'last_name' => 'required|alpha',
                 'mobile' => 'required|numeric|digits:10',
                 'email' => 'required|email|unique:users',
-                'age' => 'required|numeric',
-                'address' => 'required',
-                'gender' => 'required',
-                'height' => 'required',
-                'b_group' => 'required',
-                'pulse' => 'required',
-                'allergy' => 'required',
-                'weight' => 'required',
-                'b_pressure' => 'required',
-                'respiration' => 'required',
-                'diet' => 'required',
                 'profile_photo' => 'image|mimes:jpg,png,jpeg,gif,svg|max:500'
             ]);
             if ($request->profile_photo != null) {
@@ -119,17 +109,17 @@ class LabReporterController extends Controller
                 $validatedData['created_by'] = $user->id;
                 $validatedData['updated_by'] = $user->id;
                 //Create a new user
-                $patient = Sentinel::registerAndActivate($validatedData);
+                $labReporter = Sentinel::registerAndActivate($validatedData);
                 //Attach the user to the role
-                $role = Sentinel::findRoleBySlug('patient');
+                $role = Sentinel::findRoleBySlug('labReporter');
                 $role->users()
-                    ->attach($patient);
-                $validatedData['user_id'] = $patient->id;
-                $this->patient_info->create($validatedData);
-                $this->medical_info->create($validatedData);
-                return redirect('patient')->with('success', 'Patient created successfully!');
+                    ->attach($labReporter);
+                $validatedData['user_id'] = $labReporter->id;
+                // $this->patient_info->create($validatedData);
+                // $this->medical_info->create($validatedData);
+                return redirect('labReporter')->with('success', 'Lab Reporter created successfully!');
             } catch (Exception $e) {
-                return redirect('patient')->with('error', 'Something went wrong!!! ' . $e->getMessage());
+                return redirect('labReporter')->with('error', 'Something went wrong!!! ' . $e->getMessage());
             }
         } else {
             return view('error.403');
