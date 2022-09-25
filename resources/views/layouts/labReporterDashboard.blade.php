@@ -99,6 +99,22 @@
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title" id="exampleModal{{ $report->id }}Label">Report Results</h5>
                                                                 </div>
+                                                                <div class="table-responsive container">
+                                                                    <table class="table table-centered table-nowrap mb-0">
+                                                                        <thead class="bg-success text-dark">
+                                                                            <tr>
+                                                                                <th>Patient</th>
+                                                                                <th>Doctor</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>{{ $report->prescription->patient->first_name }} {{ $report->prescription->patient->last_name }}</td>
+                                                                                <td>{{ $report->prescription->doctor->first_name }} {{ $report->prescription->doctor->last_name }}</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
                                                                 <form action="{{ url('/updateTestReport') }}" method="post">
                                                                     @csrf
                                                                     <input type="hidden" name="id" value="{{ $report->id }}">
