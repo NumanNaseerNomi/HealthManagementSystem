@@ -60,6 +60,8 @@
                                             <td>{{ $report->name }}</td>
                                             <td>{{ $report->notes }}</td>
                                             <td>{{ $report->result }}</td>
+                                            <td>{{ $report->prescription->patient->first_name }} {{ $report->prescription->patient->last_name }}</td>
+                                            <td>{{ $report->prescription->doctor->first_name }} {{ $report->prescription->doctor->last_name }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -115,6 +117,8 @@
                                                     </div>
                                                 @endif
                                             </td>
+                                            <td>{{ $report->prescription->patient->first_name }} {{ $report->prescription->patient->last_name }}</td>
+                                            <td>{{ $report->prescription->doctor->first_name }} {{ $report->prescription->doctor->last_name }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -142,6 +146,8 @@
                                             <td>{{ $report->name }}</td>
                                             <td>{{ $report->notes }}</td>
                                             <td>{{ $report->result }}</td>
+                                            <td>{{ $report->prescription->patient->first_name }} {{ $report->prescription->patient->last_name }}</td>
+                                            <td>{{ $report->prescription->doctor->first_name }} {{ $report->prescription->doctor->last_name }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
