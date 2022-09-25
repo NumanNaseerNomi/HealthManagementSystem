@@ -16,4 +16,9 @@ class TestReport extends Model
         "labReporterId",
         "result",
     ];
+
+    public function labReporter()
+    {
+        return $this->belongsTo(User::class, "labReporterId");
+    }
 }
