@@ -6,30 +6,15 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/libs/select2/select2.min.css') }}">
 @endsection
 @section('body')
-
     <body data-topbar="dark" data-layout="horizontal">
     @endsection
     @section('content')
-        <!-- start page title -->
         <div class="row">
             <div class="col-12">
-                <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <div class="page-title-right">
-                        <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('Dashboard') }}</a></li>
-                            <li class="breadcrumb-item"><a href="{{ url('receptionist') }}">{{ __('Receptionists') }}</a></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end page title -->
-        <div class="row">
-            <div class="col-12">
-                <a href="{{ url('receptionist') }}">
-                    <button type="button" class="btn btn-primary waves-effect waves-light mb-4">
-                        <i
-                            class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>{{ __('Back to Receptionist List') }}
+                <a href="{{ url('labReporter') }}">
+                    <button type="button" class="btn btn-success waves-effect waves-light mb-4">
+                        <i class="bx bx-arrow-back font-size-16 align-middle mr-2"></i>
+                        Back to Lab Reporter List
                     </button>
                 </a>
             </div>
@@ -39,7 +24,7 @@
                 <div class="card">
                     <div class="card-body">
                         <blockquote>{{ __('Basic Information') }}</blockquote>
-                        <form action="{{ route('receptionist.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('labReporter.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6">
@@ -112,7 +97,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">{{ __('Add New Receptionist') }}</button>
+                                    <button type="submit" class="btn btn-success">Add New Lab Reporter</button>
                                 </div>
                             </div>
                         </form>
