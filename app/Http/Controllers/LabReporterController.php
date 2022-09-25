@@ -69,10 +69,7 @@ class LabReporterController extends Controller
         $user = Sentinel::getUser();
         if ($user->hasAccess('patient.create')) {
             $role = $user->roles[0]->slug;
-            $patient = null;
-            $patient_info = null;
-            $medical_info = null;
-            return view('patient.patient-details', compact('user', 'role', 'patient', 'patient_info', 'medical_info'));
+            return view('labReporter.labReporter-details', compact('user', 'role'));
         } else {
                         return view('error.403');
 
