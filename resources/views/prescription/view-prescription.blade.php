@@ -112,6 +112,7 @@
                                                 <th>{{ __('Name') }}</th>
                                                 <th>{{ __('Notes') }}</th>
                                                 <th>Results</th>
+                                                <th>Lab Reporter</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -121,6 +122,7 @@
                                                     <td> {{ $item->name }} </td>
                                                     <td> {{ $item->notes }} </td>
                                                     <td> {{ $item->result }} </td>
+                                                    <td> {{ $item->labReporter->first_name }} </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
