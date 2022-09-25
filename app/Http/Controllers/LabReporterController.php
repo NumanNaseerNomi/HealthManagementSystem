@@ -52,7 +52,7 @@ class LabReporterController extends Controller
             $role = $user->roles[0]->slug;
             $patient_role = Sentinel::findRoleBySlug('labReporter');
             $patients = $patient_role->users()->with('roles')->where('is_deleted', 0)->orderByDesc('id')->paginate($this->limit);
-            return view('patient.patients', compact('user', 'role', 'patients'));
+            return view('labReporter.labReporters', compact('user', 'role', 'patients'));
         } else {
              return view('error.403');
 
