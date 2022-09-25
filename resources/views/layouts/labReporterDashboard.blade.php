@@ -49,6 +49,8 @@
                                         <th>{{ __('Name') }}</th>
                                         <th>Note</th>
                                         <th>Results</th>
+                                        <th>Patient</th>
+                                        <th>Doctor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,6 +76,8 @@
                                         <th>{{ __('Name') }}</th>
                                         <th>Note</th>
                                         <th>Results</th>
+                                        <th>Patient</th>
+                                        <th>Doctor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -127,6 +131,8 @@
                                         <th>{{ __('Name') }}</th>
                                         <th>Note</th>
                                         <th>Results</th>
+                                        <th>Patient</th>
+                                        <th>Doctor</th>
                                     </tr>
                                 </thead>
                                 <tbody>
