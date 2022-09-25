@@ -21,4 +21,9 @@ class TestReport extends Model
     {
         return $this->belongsTo(User::class, "labReporterId");
     }
+
+    public function prescription()
+    {
+        return $this->belongsTo(Prescription::class, "prescription_id");
+    }
 }
