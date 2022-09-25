@@ -122,7 +122,7 @@
                                                     <td> {{ $item->name }} </td>
                                                     <td> {{ $item->notes }} </td>
                                                     <td> {{ $item->result }} </td>
-                                                    <td> {{ $item->labReporter->first_name }} </td>
+                                                    <td> {{ $item->labReporter->first_name }} {{ $item->labReporter->last_name }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
