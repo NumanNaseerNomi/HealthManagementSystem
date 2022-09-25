@@ -120,12 +120,13 @@
                                                                     <input type="hidden" name="id" value="{{ $report->id }}">
                                                                     <div class="modal-body">
                                                                         <div class="form-group">
+                                                                            <label>Report Details</label>
                                                                             <textarea class="form-control" rows="10" name="result" required></textarea>
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                        <button type="submit" class="btn btn-success">Save changes</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
