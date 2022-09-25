@@ -48,13 +48,7 @@
                                 @foreach ($patients as $patient)
                                     <tr>
                                         <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                        <td>
-                                            @if ($role != 'labReporter')
-                                                <a href="{{ url('patient/' . $patient->id) }}" class="text-success">{{ $patient->first_name . " " . $patient->last_name }}</a>
-                                            @else
-                                                {{ $patient->first_name . " " . $patient->last_name }}
-                                            @endif
-                                        </td>
+                                        <td>{{ $patient->first_name . " " . $patient->last_name }}</td>
                                         <td>{{ $patient->mobile }}</td>
                                         <td>{{ $patient->email }}</td>
                                     </tr>
