@@ -17,9 +17,9 @@
                 <div class="card">
                     <div class="card-body">
                         @if ($role == 'admin')
-                            <a href=" {{ route('patient.create') }} ">
+                            <a href=" {{ route('labReporter.create') }} ">
                                 <button type="button" class="btn btn-success waves-effect waves-light mb-4">
-                                    <i class="bx bx-plus font-size-16 align-middle mr-2"></i> {{ __('New Patient') }}
+                                    <i class="bx bx-plus font-size-16 align-middle mr-2"></i> New Lab Reporter
                                 </button>
                             </a>
                         @endif
