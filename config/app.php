@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Doctorly'),
 
-    'DEFAULT_PASSWORD' => env('DEFAULT_PASSWORD', 'user123456'),
+    'DEFAULT_PASSWORD' => env('DEFAULT_PASSWORD', 'password'),
 
     'page_limit' => 10,
 
