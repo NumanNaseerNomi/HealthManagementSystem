@@ -5,7 +5,7 @@
             <h4 class="mb-0 font-size-18">{{ __('Dashboard') }}</h4>
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item active">Welcome to Admin Dashboard</li>
+                    <li class="breadcrumb-item active">Welcome to Lab Reporter Dashboard</li>
                 </ol>
             </div>
         </div>
