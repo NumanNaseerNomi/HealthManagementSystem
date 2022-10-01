@@ -112,7 +112,6 @@ class UserController extends Controller
             $patient_Details->gender = $request->gender;
             $patient_Details->address = $request->address;
             $patient_Details->save();
-            return $patient_Details;
             // medical info save
             $medical_info = new MedicalInfo();
             $medical_info->user_id = $patient_id;
