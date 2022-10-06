@@ -27,16 +27,6 @@
             </button>
         </div>
         <div class="d-flex">
-            <button type="button" class="btn header-item noti-icon waves-effect">
-                @if(isset($messagesCount))
-                    @if($messagesCount > 0)
-                        <span class="badge badge-pill badge-danger">{{$messagesCount}}</span>
-                    @endif
-                @else
-                    <span class="badge badge-pill badge-danger text-danger">.</span>
-                @endif
-                <a href="/iMessages" role="button"><i class="bx bx-chat text-dark"></i></a>
-            </button>
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect"
                     id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
