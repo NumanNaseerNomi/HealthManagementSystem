@@ -137,23 +137,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card mini-stats-wid">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <p class="text-muted font-weight-medium">{{ __('Pending Bills') }}</p>
-                                        <h4 class="mb-0">{{ number_format($data['pending_bill']) }}</h4>
-                                    </div>
-                                    <div class="avatar-sm align-self-center mini-stat-icon rounded-circle bg-primary">
-                                        <span class="avatar-title">
-                                            <i class="bx bx-hourglass font-size-24"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
