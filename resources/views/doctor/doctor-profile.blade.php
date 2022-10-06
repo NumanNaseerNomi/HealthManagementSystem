@@ -209,15 +209,7 @@
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <!-- Nav tabs -->
-                        <!-- <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist"> -->
-                            <!-- <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#AppointmentList" role="tab">
-                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span> -->
-                                    <h4 class="d-none d-sm-block">{{ __('Appointment List') }}</h4>
-                                <!-- </a>
-                            </li> -->
-                        <!-- </ul> -->
+                        <h4 class="d-none d-sm-block">{{ __('Appointment List') }}</h4>
                                 <table class="table table-bordered dt-responsive nowrap "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
