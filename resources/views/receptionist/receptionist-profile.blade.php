@@ -182,12 +182,6 @@
                                     <span class="d-none d-sm-block">{{ __('Appointment List') }}</span>
                                 </a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#Invoices" role="tab">
-                                    <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                    <span class="d-none d-sm-block">{{ __('Invoices') }}</span>
-                                </a>
-                            </li> -->
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
