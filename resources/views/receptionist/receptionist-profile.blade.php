@@ -175,14 +175,14 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                            <li class="nav-item">
+                        <!-- <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist"> -->
+                            <!-- <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#AppointmentList" role="tab">
-                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                    <span class="d-none d-sm-block">{{ __('Appointment List') }}</span>
-                                </a>
-                            </li>
-                        </ul>
+                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span> -->
+                                    <h4 class="d-none d-sm-block">{{ __('Appointment List') }}</h4>
+                                <!-- </a>
+                            </li> -->
+                        <!-- </ul> -->
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
                             <div class="tab-pane active" id="AppointmentList" role="tabpanel">
