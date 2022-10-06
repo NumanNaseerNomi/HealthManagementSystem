@@ -176,7 +176,7 @@
                     <div class="card-body">
                         <h4 class="d-none d-sm-block">{{ __('Appointment List') }}</h4>
                         <div class="tab-content p-3 text-muted">
-                            <div class="tab-pane active" id="AppointmentList" role="tabpanel">
+                            <!-- <div class="tab-pane active" id="AppointmentList" role="tabpanel"> -->
                                 <table class="table table-bordered dt-responsive nowrap "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -223,7 +223,7 @@
                                         {{ $appointments->links() }}
                                     </div>
                                 </div>
-                            </div>
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
