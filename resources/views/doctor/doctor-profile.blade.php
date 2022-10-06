@@ -281,7 +281,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="PrescriptionList" role="tabpanel">
+                            <!-- <div class="tab-pane" id="PrescriptionList" role="tabpanel">
                                 <table class="table table-bordered dt-responsive nowrap "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -332,8 +332,8 @@
                                         {{ $prescriptions->links() }}
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane" id="Invoices" role="tabpanel">
+                            </div> -->
+                            <!-- <div class="tab-pane" id="Invoices" role="tabpanel">
                                 <table class="table table-bordered dt-responsive nowrap "
                                     style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                     <thead>
@@ -385,8 +385,8 @@
                                         {{ $invoices->links() }}
                                     </div>
                                 </div>
-                            <!-- </div>
-                        </div> -->
+                            </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
