@@ -144,12 +144,6 @@
                                     <span class="d-none d-sm-block">{{ __('Prescription List') }}</span>
                                 </a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#Invoices" role="tab">
-                                    <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
-                                    <span class="d-none d-sm-block">{{ __('Invoices') }}</span>
-                                </a>
-                            </li> -->
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
@@ -286,56 +280,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="tab-pane" id="Invoices" role="tabpanel">
-                                <table class="table table-centered table-nowrap mb-0 table-striped">
-                                    <thead class="bg-success text-dark">
-                                        <tr>
-                                            <th>{{ __('Sr. No') }}</th>
-                                            <th>{{ __('Date') }}</th>
-                                            <th>{{ __('Status') }}</th>
-                                            <th>{{ __('Option') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if (session()->has('page_limit'))
-                                            @php
-                                                $per_page = session()->get('page_limit');
-                                            @endphp
-                                        @else
-                                            @php
-                                                $per_page = Config::get('app.page_limit');
-                                            @endphp
-                                        @endif
-                                        @php
-                                            $currentpage = $invoices->currentPage();
-                                        @endphp
-                                        @foreach ($invoices as $item)
-                                            <tr>
-                                                <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                                <td>{{ date('d-m-Y') }}</td>
-                                                <td>{{ $item->payment_status }}</td>
-                                                <td>
-                                                    <a href="{{ url('invoice/' . $item->id) }}">
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
-                                                            {{ __('View') }}
-                                                        </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <div class="col-md-12 text-center mt-3">
-                                    <div class="d-flex justify-content-start">
-                                        Showing {{ $invoices->firstItem() }} to {{ $invoices->lastItem() }} of
-                                        {{ $invoices->total() }} entries
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        {{ $invoices->links() }}
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
