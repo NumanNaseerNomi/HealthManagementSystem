@@ -210,53 +210,53 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="d-none d-sm-block">{{ __('Appointment List') }}</h4>
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th>{{ __('Sr. No') }}</th>
-                                            <th>{{ __('Patient Name') }}</th>
-                                            <th>{{ __('Patient Contact no') }}</th>
-                                            <th>{{ __('Patient Email') }}</th>
-                                            <th>{{ __('Date') }}</th>
-                                            <th>{{ __('Time') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if (session()->has('page_limit'))
-                                            @php
-                                                $per_page = session()->get('page_limit');
-                                            @endphp
-                                        @else
-                                            @php
-                                                $per_page = Config::get('app.page_limit');
-                                            @endphp
-                                        @endif
-                                        @php
-                                            $currentpage = $appointments->currentPage();
-                                        @endphp
-                                        @foreach ($appointments as $item)
-                                            <tr>
-                                                <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                                <td> {{ $item->patient->first_name }} {{ $item->patient->last_name }}
-                                                </td>
-                                                <td> {{ $item->patient->mobile }} </td>
-                                                <td> {{ $item->patient->email }} </td>
-                                                <td>{{ $item->appointment_date }}</td>
-                                                <td>{{ $item->timeSlot->from . ' to ' . $item->timeSlot->to }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <div class="col-md-12 text-center mt-3">
-                                    <div class="d-flex justify-content-start">
-                                        Showing {{ $appointments->firstItem() }} to {{ $appointments->lastItem() }} of
-                                        {{ $appointments->total() }} entries
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        {{ $appointments->links() }}
-                                    </div>
-                                </div>
+                        <table class="table table-bordered dt-responsive nowrap "
+                            style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th>{{ __('Sr. No') }}</th>
+                                    <th>{{ __('Patient Name') }}</th>
+                                    <th>{{ __('Patient Contact no') }}</th>
+                                    <th>{{ __('Patient Email') }}</th>
+                                    <th>{{ __('Date') }}</th>
+                                    <th>{{ __('Time') }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (session()->has('page_limit'))
+                                    @php
+                                        $per_page = session()->get('page_limit');
+                                    @endphp
+                                @else
+                                    @php
+                                        $per_page = Config::get('app.page_limit');
+                                    @endphp
+                                @endif
+                                @php
+                                    $currentpage = $appointments->currentPage();
+                                @endphp
+                                @foreach ($appointments as $item)
+                                    <tr>
+                                        <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
+                                        <td> {{ $item->patient->first_name }} {{ $item->patient->last_name }}
+                                        </td>
+                                        <td> {{ $item->patient->mobile }} </td>
+                                        <td> {{ $item->patient->email }} </td>
+                                        <td>{{ $item->appointment_date }}</td>
+                                        <td>{{ $item->timeSlot->from . ' to ' . $item->timeSlot->to }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        <div class="col-md-12 text-center mt-3">
+                            <div class="d-flex justify-content-start">
+                                Showing {{ $appointments->firstItem() }} to {{ $appointments->lastItem() }} of
+                                {{ $appointments->total() }} entries
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                {{ $appointments->links() }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
