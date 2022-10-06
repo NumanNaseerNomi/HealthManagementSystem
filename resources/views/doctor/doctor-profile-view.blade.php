@@ -43,10 +43,6 @@
                                         <th scope="row">{{ __('Experience:') }}</th>
                                         <td> {{ $doctor_info->experience }} </td>
                                     </tr>
-                                    <!-- <tr>
-                                        <th scope="row">{{ __('Fees:') }}</th>
-                                        <td>{{ $doctor_info->fees }}</td>
-                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
