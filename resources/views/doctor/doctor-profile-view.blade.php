@@ -200,12 +200,12 @@
                                     <span class="d-none d-sm-block">{{ __('Prescription List') }}</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#Invoices" role="tab">
                                     <span class="d-block d-sm-none"><i class="fas fa-cog"></i></span>
                                     <span class="d-none d-sm-block">{{ __('Invoices') }}</span>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content p-3 text-muted">
@@ -305,7 +305,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="Invoices" role="tabpanel">
+                            <!-- <div class="tab-pane" id="Invoices" role="tabpanel">
                                 <table class="table table-centered table-nowrap mb-0 table-striped">
                                     <thead class="bg-success text-dark">
                                         <tr>
@@ -353,7 +353,7 @@
                                         {{ $invoices->links() }}
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
