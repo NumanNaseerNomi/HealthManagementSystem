@@ -224,60 +224,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <div class="tab-pane" id="Invoices" role="tabpanel">
-                                <table class="table table-bordered dt-responsive nowrap "
-                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th>{{ __('Sr. No') }}</th>
-                                            <th>{{ __('Date') }}</th>
-                                            <th>{{ __('Patient name') }}</th>
-                                            <th>{{ __('Status') }}</th>
-                                            <th>{{ __('Option') }}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if (session()->has('page_limit'))
-                                            @php
-                                                $per_page = session()->get('page_limit');
-                                            @endphp
-                                        @else
-                                            @php
-                                                $per_page = Config::get('app.page_limit');
-                                            @endphp
-                                        @endif
-                                        @php
-                                            $currentpage = $invoices->currentPage();
-                                        @endphp
-                                        @foreach ($invoices as $item)
-                                            <tr>
-                                                <td>{{ $loop->index + 1 + $per_page * ($currentpage - 1) }}</td>
-                                                <td>{{ date('d-m-Y') }}</td>
-                                                <td>{{ $item->user->first_name . ' ' . $item->user->last_name }}</td>
-                                                <td>{{ $item->payment_status }}</td>
-                                                <td>
-                                                    <a href="{{ url('invoice/' . $item->id) }}">
-                                                        <button type="button"
-                                                            class="btn btn-primary btn-sm btn-rounded waves-effect waves-light">
-                                                            {{ __('View') }}
-                                                        </button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <div class="col-md-12 text-center mt-3">
-                                    <div class="d-flex justify-content-start">
-                                        Showing {{ $invoices->firstItem() }} to {{ $invoices->lastItem() }} of
-                                        {{ $invoices->total() }} entries
-                                    </div>
-                                    <div class="d-flex justify-content-end">
-                                        {{ $invoices->links() }}
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
