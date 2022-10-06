@@ -119,7 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
                                 <div class="media">
@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-4">
                         <div class="card mini-stats-wid">
                             <div class="card-body">
