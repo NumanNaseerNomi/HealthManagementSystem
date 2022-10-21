@@ -22,8 +22,8 @@ class PatientSeeder extends Seeder
             'last_name' => 'Doctorly',
             'mobile' => '5142323114',
             'profile_photo' => 'Female_patient.png',
-            'email' => 'patient@patient.com',
-            'password' => 'patient@patient.com',
+            'email' => 'patient@themesbrand.website',
+            'password' => 'patient@123456',
         ];
         $user = Sentinel::registerAndActivate($user);
         $role = Sentinel::findRoleBySlug('patient');

@@ -99,7 +99,7 @@ $(document).ready(function() {
                     } else {
                         var t = 1;
                         var data = response.appointments;
-                        var list = '<table class="table table-striped dt-responsive nowrap"><thead class="bg-success text-dark"><tr><th>Sr.No</th>';
+                        var list = '<table class="table table-bordered dt-responsive nowrap datatable" style="border-collapse: collapse; border-spacing: 0; width: 100%;"><thead class="thead-light"><tr><th>Sr.No</th>';
                         if (response.role == 'doctor') {
                             list += '<th>Patient Name</th>';
                             list += '<th>Patient Number</th>';
@@ -134,7 +134,7 @@ $(document).ready(function() {
                                 let from = appointments.time_slot.from;
                                 let to = appointments.time_slot.to;
                                 let mobile = appointments.doctor.mobile
-                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td><a href='/iMessages?id=" + appointments.doctor.id + "' role='button'><i class='bx bx-chat text-light bg-success p-1 rounded-circle'></i></a> " + mobile + "</td><td>" + from + " to " + to +
+                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td>" + mobile + "</td><td>" + from + " to " + to +
                                     "</td></td>";
                                 t++;
                             });
@@ -146,7 +146,7 @@ $(document).ready(function() {
                                 let from = appointments.time_slot.from;
                                 let to = appointments.time_slot.to;
                                 let mobile = appointments.patient.mobile
-                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td><a href='/iMessages?id=" + appointments.patient.id + "' role='button'><i class='bx bx-chat text-light bg-success p-1 rounded-circle'></i></a> " + mobile + "</td><td>" + from + " to " + to +
+                                list += "<tr><td>" + t + "</td><td>" + first_name + "&nbsp;" + last_name + "</td><td>" + mobile + "</td><td>" + from + " to " + to +
                                     "</td></td>";
                                 t++;
                             });

@@ -70,9 +70,7 @@ class PrescriptionController extends Controller
             $role = $user->roles[0]->slug;
             $patient_role = Sentinel::findRoleBySlug('patient');
             $patients = $patient_role->users()->with('roles')->get();
-            $labReporterRole = Sentinel::findRoleBySlug("labReporter");
-            $labReporters = $labReporterRole->users()->with('roles')->get();
-            return view('prescription.prescription-details', compact('user', 'role', 'patients', "labReporters"));
+            return view('prescription.prescription-details', compact('user', 'role', 'patients'));
         } else {
             return view('error.403');
         }
@@ -86,7 +84,6 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $user = Sentinel::getUser();
         if ($user->hasAccess('prescription.create')) {
             $request->validate([
@@ -114,13 +111,12 @@ class PrescriptionController extends Controller
                         $this->medicine->notes = $item['notes'];
                         $this->medicine->save();
                     }
-                    if ($request->test_reports[0]['test_report'] != null && $request->test_reports[0]['notes'] != null && $request->labReporterId != null) {
+                    if ($request->test_reports[0]['test_report'] != null && $request->test_reports[0]['notes'] != null) {
                         foreach ($request->test_reports as $item) {
                             $this->test_report = new TestReport();
                             $this->test_report->prescription_id = $this->prescription->id;
                             $this->test_report->name = $item['test_report'];
                             $this->test_report->notes = $item['notes'];
-                            $this->test_report->labReporterId = $request->labReporterId;
                             $this->test_report->save();
                         }
                     }
@@ -289,24 +285,24 @@ class PrescriptionController extends Controller
     {
         $user = Sentinel::getUser();
         $role = $user->roles[0]->slug;
-        $prescriptions_details = Prescription::with(['doctor', 'appointment', 'appointment.timeSlot','appointment.invoice'])
-        ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')->paginate($this->limit);
-        // $prescription = Invoice::where('payment_status','Paid')
-        // ->with('doctor', 'appointment','appointment.timeSlot','appointment.invoice','appointment.prescription')
-        // ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')
-        // ->paginate($this->limit);
-        // $prescriptions = collect();
-        // foreach ($prescription as $key => $value) {
-        //     if($value['appointment']['prescription']){
-        //         $prescriptions->push($value['id']);
-        //     }
-        //     else{
-        //         $pre = $prescriptions;
-        //     }
-        // }
-        // $prescriptions_details = Invoice::where('payment_status','Paid')->with('doctor','appointment', 'appointment.timeSlot','appointment.prescription')
-        //     ->WhereIn('id',$prescriptions)->orderBy('id', 'desc')
-        //     ->paginate($this->limit);
+        // $prescriptions = Prescription::with(['doctor', 'appointment', 'appointment.timeSlot','appointment.invoice'])
+        // ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')->paginate($this->limit);
+        $prescription = Invoice::where('payment_status','Paid')
+        ->with('doctor', 'appointment','appointment.timeSlot','appointment.invoice','appointment.prescription')
+        ->where('patient_id', $user->id)->where('is_deleted', 0)->orderBy('id', 'desc')
+        ->paginate($this->limit);
+        $prescriptions = collect();
+        foreach ($prescription as $key => $value) {
+            if($value['appointment']['prescription']){
+                $prescriptions->push($value['id']);
+            }
+            else{
+                $pre = $prescriptions;
+            }
+        }
+        $prescriptions_details = Invoice::where('payment_status','Paid')->with('doctor','appointment', 'appointment.timeSlot','appointment.prescription')
+            ->WhereIn('id',$prescriptions)->orderBy('id', 'desc')
+            ->paginate($this->limit);
         // return $prescriptions_details;
         return view('patient.patient-prescriptions', compact('user', 'role', 'prescriptions_details'));
     }
@@ -320,14 +316,14 @@ class PrescriptionController extends Controller
         // ->where('patient_id', $user->id)->orWhere('id', $id)->where('is_deleted', 0)->first();
         // return $user_details;
         if ($user_details) {
-            // if($user_details->appointment->invoice){
+            if($user_details->appointment->invoice){
                 $medicines = Medicine::where('prescription_id', $id)->where('is_deleted', 0)->get();
                 $test_reports = TestReport::where('prescription_id', $id)->where('is_deleted', 0)->get();
                 return view('patient.patient-prescription-view', compact('user', 'role', 'medicines', 'test_reports', 'user_details'));
-            // }
-            // else{
-            //     return redirect()->back()->with('error', 'Invoice details not found');
-            // }
+            }
+            else{
+                return redirect()->back()->with('error', 'Invoice details not found');
+            }
         } else {
             return redirect()->back()->with('error', 'Prescription not found');
         }

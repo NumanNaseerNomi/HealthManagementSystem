@@ -18,12 +18,12 @@ class DoctorSeeder extends Seeder
     {
         $faker = faker::create();
         $user = [
-            'first_name' => 'Specialist Doctor',
+            'first_name' => 'Doctor',
             'last_name' => 'Doctorly',
             'mobile' => '5142323114',
             'profile_photo' => 'Female_doctor.png',
-            'email' => 'doctor@doctor.com',
-            'password' => 'doctor@doctor.com',
+            'email' => 'doctor@themesbrand.website',
+            'password' => 'doctor@123456',
         ];
         $user = Sentinel::registerAndActivate($user);
         $role = Sentinel::findRoleBySlug('doctor');
@@ -42,7 +42,7 @@ class DoctorSeeder extends Seeder
         foreach (range(3, 15) as $item) {
             $fakerName = $faker->name;
             $user = [
-                'first_name' => "Specialist " . Str::before($fakerName, ' '),
+                'first_name' => Str::before($fakerName, ' '),
                 'last_name' => Str::after($fakerName, ' '),
                 'mobile' => rand(1000000000, 2000000000),
                 'profile_photo' => 'dr-avatar-' . $item . '.jpg',

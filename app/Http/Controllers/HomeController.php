@@ -13,7 +13,6 @@ use App\ReceptionListDoctor;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Stripe\Card;
-use App\TestReport;
 
 class HomeController extends Controller
 {
@@ -252,14 +251,6 @@ class HomeController extends Controller
                 'monthly_diff' => $monthlyEarning['diff']
             ];
             return view('index', compact('user', 'role', 'appointments', 'data'));
-        }
-        elseif ($role == "labReporter")
-        {
-            $allTestReports = TestReport::where("labReporterId", $user->id)->get();
-            $pendingTestReports = TestReport::where("labReporterId", $user->id)->where("result", null)->get();
-            $completedTestReports = TestReport::where("labReporterId", $user->id)->whereNotNull("result")->get();
-
-            return view("index", compact("user", "role", "allTestReports", "pendingTestReports", "completedTestReports"));
         }
     }
 

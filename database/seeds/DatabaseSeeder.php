@@ -5,7 +5,6 @@ use Database\Seeders\NotificationTypeSeeder;
 use Database\Seeders\DoctorAvailableDaySeeder;
 use Database\Seeders\DoctorAvailableSlotSeeder;
 use Database\Seeders\DoctorAvailableTimeSeeder;
-use Database\Seeders\LabReporterSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,7 +27,6 @@ class DatabaseSeeder extends Seeder
             DoctorAvailableDaySeeder::class,
             DoctorAvailableTimeSeeder::class,
             DoctorAvailableSlotSeeder::class,
-            LabReporterSeeder::class,
         ]);
     }
 }

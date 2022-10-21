@@ -15,12 +15,7 @@ use App\Http\Controllers\StripePaymentController;
 |
 */
 
-Route::view("/", "default");
-Route::view("/about", "about");
-Route::view("/services", "services");
-Route::view("/contact", "contact");
-
-Route::get('/dashboard', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 // authentication routes
 Route::get('login', 'Auth\AuthController@showLoginForm');
@@ -45,7 +40,6 @@ Route::get('profile-view', 'UserController@profile_view');
 Route::resource('user', 'UserController');
 Route::resource('doctor', 'DoctorController');
 Route::resource('patient', 'PatientController');
-Route::resource('labReporter', 'LabReporterController');
 Route::resource('receptionist', 'ReceptionistController');
 Route::resource('appointment', 'AppointmentController');
 Route::resource('prescription', 'PrescriptionController');
@@ -114,9 +108,4 @@ Route::get('paymentComplete', [StripePaymentController::class, 'payment_complete
 // Payment Api key add
 Route::resource('payment-key','PaymentApiController');
 
-// iMessages
-Route::get('iMessages', 'MessagesController@chats');
-Route::post('sendMessage', 'MessagesController@sendMessage');
-
-Route::post('updateTestReport', 'TestReportController@update');
 });

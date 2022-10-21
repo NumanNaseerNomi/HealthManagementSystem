@@ -19,8 +19,8 @@ class AdminSeeder extends Seeder
             'last_name'  => 'Admin',
             'mobile'     => '5142323114',
             'profile_photo'=>'avatar-5.jpg',
-            'email'      => 'admin@admin.com',
-            'password' => 'admin@admin.com',
+            'email'      => 'admin@themesbrand.website',
+            'password' => 'admin@123456',
         ];
         $user = Sentinel::registerAndActivate( $credentials );
         $role = Sentinel::findRoleBySlug('admin');

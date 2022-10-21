@@ -13,17 +13,5 @@ class TestReport extends Model
         'name',
         'notes',
         'is_deleted',
-        "labReporterId",
-        "result",
     ];
-
-    public function labReporter()
-    {
-        return $this->belongsTo(User::class, "labReporterId");
-    }
-
-    public function prescription()
-    {
-        return $this->belongsTo(Prescription::class, "prescription_id");
-    }
 }
